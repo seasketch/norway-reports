@@ -1,1 +1,8 @@
-[]
+[
+  {
+    "objectiveId": "30percent",
+    "shortDesc": "30% of Rael NP in No-Take MPAs",
+    "target": 0.3,
+    "countsToward": { "planningArea": "yes" }
+  }
+]

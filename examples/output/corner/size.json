@@ -1,0 +1,15 @@
+{
+  "metrics": [
+    {
+      "geographyId": null,
+      "metricId": "size",
+      "classId": "planningArea",
+      "sketchId": "102341",
+      "groupId": null,
+      "value": 9951031.262031,
+      "extra": {
+        "sketchName": "corner"
+      }
+    }
+  ]
+}

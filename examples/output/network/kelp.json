@@ -1,0 +1,38 @@
+{
+  "metrics": [
+    {
+      "geographyId": null,
+      "metricId": "kelp",
+      "classId": "kelp",
+      "sketchId": "101895",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "test"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "kelp",
+      "classId": "kelp",
+      "sketchId": "102341",
+      "groupId": null,
+      "value": 277694.757229,
+      "extra": {
+        "sketchName": "corner"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "kelp",
+      "classId": "kelp",
+      "sketchId": "102342",
+      "groupId": null,
+      "value": 277694.757229,
+      "extra": {
+        "sketchName": "network",
+        "isCollection": true
+      }
+    }
+  ]
+}

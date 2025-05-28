@@ -2,10 +2,7 @@
   {
     "datasourceId": "world",
     "geo_type": "vector",
-    "formats": [
-      "json",
-      "fgb"
-    ],
+    "formats": ["json", "fgb"],
     "precalc": false,
     "metadata": {
       "name": "World Outline Polygon",
@@ -20,16 +17,40 @@
     "url": "https://gp-global-datasources-datasets.s3.us-west-1.amazonaws.com/world.fgb"
   },
   {
-    "src": "data/src/planningArea.fgb",
-    "layerName": "planningArea",
-    "geo_type": "vector",
     "datasourceId": "planningArea",
-    "formats": [
-      "fgb"
-    ],
+    "geo_type": "vector",
+    "formats": ["fgb"],
+    "precalc": true,
+    "layerName": "planningArea",
     "classKeys": [],
     "created": "2025-05-24T18:04:59.297Z",
     "lastUpdated": "2025-05-24T18:04:59.297Z",
+    "src": "data/src/planningArea.fgb",
+    "propertiesToKeep": [],
+    "explodeMulti": true
+  },
+  {
+    "datasourceId": "eelgrass",
+    "geo_type": "vector",
+    "formats": ["fgb"],
+    "precalc": true,
+    "layerName": "naturtype_marin_hb19_alegras.geojson",
+    "classKeys": [],
+    "created": "2025-05-28T04:53:03.668Z",
+    "lastUpdated": "2025-05-28T05:07:09.425Z",
+    "src": "data/src/Reports/Eelgrass/naturtype_marin_hb19_alegras.geojson.json",
+    "propertiesToKeep": [],
+    "explodeMulti": true
+  },
+  {
+    "src": "data/src/Reports/KelpForest/naturtype_marin_hb19_tare.geojson.json",
+    "layerName": "naturtype_marin_hb19_tare.geojson",
+    "geo_type": "vector",
+    "datasourceId": "kelp",
+    "formats": ["fgb"],
+    "classKeys": [],
+    "created": "2025-05-28T05:24:21.657Z",
+    "lastUpdated": "2025-05-28T05:24:21.657Z",
     "propertiesToKeep": [],
     "explodeMulti": true,
     "precalc": true

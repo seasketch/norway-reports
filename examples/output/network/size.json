@@ -1,0 +1,38 @@
+{
+  "metrics": [
+    {
+      "geographyId": null,
+      "metricId": "size",
+      "classId": "planningArea",
+      "sketchId": "101895",
+      "groupId": null,
+      "value": 108387611.0878,
+      "extra": {
+        "sketchName": "test"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "size",
+      "classId": "planningArea",
+      "sketchId": "102341",
+      "groupId": null,
+      "value": 9951031.262031,
+      "extra": {
+        "sketchName": "corner"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "size",
+      "classId": "planningArea",
+      "sketchId": "102342",
+      "groupId": null,
+      "value": 118334346.231994,
+      "extra": {
+        "sketchName": "network",
+        "isCollection": true
+      }
+    }
+  ]
+}

@@ -1,1 +1,50 @@
-[]
+[
+  {
+    "geographyId": "planningArea",
+    "metricId": "area",
+    "classId": "eelgrass-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 1958139.9530865704
+  },
+  {
+    "geographyId": "planningArea",
+    "metricId": "area",
+    "classId": "kelp-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 19097894.795633826
+  },
+  {
+    "geographyId": "planningArea",
+    "metricId": "area",
+    "classId": "planningArea-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 882947148.835817
+  },
+  {
+    "geographyId": "planningArea",
+    "metricId": "count",
+    "classId": "eelgrass-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 348
+  },
+  {
+    "geographyId": "planningArea",
+    "metricId": "count",
+    "classId": "kelp-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 232
+  },
+  {
+    "geographyId": "planningArea",
+    "metricId": "count",
+    "classId": "planningArea-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 1
+  }
+]

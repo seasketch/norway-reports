@@ -6,13 +6,18 @@ import {
   SketchAttributesCard,
 } from "@seasketch/geoprocessing/client-ui";
 import Translator from "../components/TranslatorAsync.js";
-import { SimpleCard } from "../components/SimpleCard.js";
+import { Size } from "../components/Size.js";
+import { Eelgrass } from "../components/Eelgrass.js";
+import { Kelp } from "../components/Kelp.js";
 
 const enableAllTabs = false;
 const BaseReport = () => {
   const { t } = useTranslation();
-  const segments = [{ id: "OVERVIEW", label: t("Overview") }];
-  const [tab, setTab] = useState<string>("OVERVIEW");
+  const segments = [
+    { id: "Viability", label: t("Viability") },
+    { id: "Representation", label: t("Representation") },
+  ];
+  const [tab, setTab] = useState<string>("Viability");
 
   return (
     <>
@@ -23,9 +28,13 @@ const BaseReport = () => {
           segments={segments}
         />
       </div>
-      <ReportPage hidden={!enableAllTabs && tab !== "OVERVIEW"}>
-        <SimpleCard />
+      <ReportPage hidden={!enableAllTabs && tab !== "Viability"}>
+        <Size />
         <SketchAttributesCard autoHide />
+      </ReportPage>
+      <ReportPage hidden={!enableAllTabs && tab !== "Representation"}>
+        <Eelgrass />
+        <Kelp />
       </ReportPage>
     </>
   );

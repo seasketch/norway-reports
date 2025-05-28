@@ -1,22 +1,20 @@
-import Handler from "./simpleFunction.js";
 import {
   getExamplePolygonSketchAll,
   writeResultOutput,
 } from "@seasketch/geoprocessing/scripts/testing";
 import { describe, test, expect } from "vitest";
-
-const simpleFunction = Handler.func;
+import { size } from "./size.js";
 
 describe("Basic smoke tests", () => {
   test("handler function is present", () => {
-    expect(typeof simpleFunction).toBe("function");
+    expect(typeof size).toBe("function");
   });
-  test("simpleFunction - tests run against all examples", async () => {
+  test("size - tests run against all examples", async () => {
     const examples = await getExamplePolygonSketchAll();
     for (const example of examples) {
-      const result = await simpleFunction(example);
+      const result = await size(example);
       expect(result).toBeTruthy();
-      writeResultOutput(result, "simpleFunction", example.properties.name);
+      writeResultOutput(result, "size", example.properties.name);
     }
-  }, 100_000);
+  }, 60_000);
 });

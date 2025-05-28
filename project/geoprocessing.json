@@ -2,7 +2,17 @@
   "author": "Abby Vath Meyer <avmey@ucsb.edu>",
   "organization": "",
   "region": "us-east-1",
-  "clients": [],
+  "clients": [
+    {
+      "name": "TabReport",
+      "description": "Tab Reports",
+      "source": "src/clients/TabReport.tsx"
+    }
+  ],
   "preprocessingFunctions": ["src/functions/clipToOceanEez.ts"],
-  "geoprocessingFunctions": []
+  "geoprocessingFunctions": [
+    "src/functions/size.ts",
+    "src/functions/eelgrass.ts",
+    "src/functions/kelp.ts"
+  ]
 }

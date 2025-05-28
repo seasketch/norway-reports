@@ -1,1 +1,39 @@
-[]
+[
+  {
+    "metricId": "size",
+    "type": "areaOverlap",
+    "layerId": "IQM2iyEoL",
+    "objectiveId": "30percent",
+    "classes": [
+      {
+        "classId": "planningArea",
+        "display": "Raet NP",
+        "datasourceId": "planningArea"
+      }
+    ]
+  },
+  {
+    "metricId": "eelgrass",
+    "type": "areaOverlap",
+    "classes": [
+      {
+        "classId": "eelgrass",
+        "display": "Eelgrass",
+        "datasourceId": "eelgrass",
+        "layerId": "Zt39cK1uX"
+      }
+    ]
+  },
+  {
+    "metricId": "kelp",
+    "type": "areaOverlap",
+    "classes": [
+      {
+        "classId": "kelp",
+        "display": "Kelp Forest",
+        "datasourceId": "kelp",
+        "layerId": "EYzEmadch"
+      }
+    ]
+  }
+]
