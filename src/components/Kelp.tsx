@@ -81,7 +81,7 @@ export const Kelp: React.FunctionComponent<GeogProp> = (props) => {
           <ReportError>
             <p>
               <Trans i18nKey="Kelp 1">
-                This report summarizes this plan&apos;s overlap with the data.
+                This report summarizes the kelp forest extent within the plan.
               </Trans>
             </p>
 
@@ -100,9 +100,11 @@ export const Kelp: React.FunctionComponent<GeogProp> = (props) => {
                   type: "metricValue",
                   metricId: metricGroup.metricId,
                   valueFormatter: (val) =>
-                    roundLower(squareMeterToKilometer(Number(val)), {
-                      lower: 0.1,
-                    }),
+                    !Number(val)
+                      ? "0"
+                      : roundLower(squareMeterToKilometer(Number(val)), {
+                          lower: 0.1,
+                        }),
                   valueLabel: unitsLabel,
                   chartOptions: {
                     showTitle: true,
@@ -140,9 +142,7 @@ export const Kelp: React.FunctionComponent<GeogProp> = (props) => {
 
             <Collapse title={t("Learn More")}>
               <Trans i18nKey="Kelp - learn more">
-                <p>ℹ️ Overview:</p>
-                <p>🎯 Planning Objective:</p>
-                <p>🗺️ Source Data:</p>
+                <p>🗺️ Source Data: Marine naturtyper ettter DN-håndbok 19</p>
                 <p>
                   📈 Report: This report calculates the total value of each
                   feature within the plan. This value is divided by the total

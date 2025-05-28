@@ -2,6 +2,14 @@
   {
     "geographyId": "planningArea",
     "metricId": "area",
+    "classId": "bioclasticSand-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 7371204.481113088
+  },
+  {
+    "geographyId": "planningArea",
+    "metricId": "area",
     "classId": "eelgrass-total",
     "sketchId": null,
     "groupId": null,
@@ -22,6 +30,14 @@
     "sketchId": null,
     "groupId": null,
     "value": 882947148.835817
+  },
+  {
+    "geographyId": "planningArea",
+    "metricId": "count",
+    "classId": "bioclasticSand-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 73
   },
   {
     "geographyId": "planningArea",

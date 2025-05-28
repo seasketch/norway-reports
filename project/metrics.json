@@ -35,5 +35,17 @@
         "layerId": "EYzEmadch"
       }
     ]
+  },
+  {
+    "metricId": "bioclasticSand",
+    "type": "areaOverlap",
+    "classes": [
+      {
+        "classId": "bioclasticSand",
+        "display": "Bioclastic Sand",
+        "datasourceId": "bioclasticSand",
+        "layerId": "0pIOvT11X"
+      }
+    ]
   }
 ]

@@ -23,12 +23,12 @@ import {
 import project from "../../project/projectClient.js";
 
 /**
- * Eelgrass component
+ * BioclasticSand component
  *
  * @param props - geographyId
  * @returns A react component which displays an overlap report
  */
-export const Eelgrass: React.FunctionComponent<GeogProp> = (props) => {
+export const BioclasticSand: React.FunctionComponent<GeogProp> = (props) => {
   const { t } = useTranslation();
   const [{ isCollection, id, childProperties }] = useSketchProperties();
   const curGeography = project.getGeographyById(props.geographyId, {
@@ -36,7 +36,7 @@ export const Eelgrass: React.FunctionComponent<GeogProp> = (props) => {
   });
 
   // Metrics
-  const metricGroup = project.getMetricGroup("eelgrass", t);
+  const metricGroup = project.getMetricGroup("bioclasticSand", t);
   const precalcMetrics = project.getPrecalcMetrics(
     metricGroup,
     "area",
@@ -44,7 +44,7 @@ export const Eelgrass: React.FunctionComponent<GeogProp> = (props) => {
   );
 
   // Labels
-  const titleLabel = t("Eelgrass");
+  const titleLabel = t("Bioclastic Sand");
   const mapLabel = t("Map");
   const withinLabel = t("Within Plan");
   const percWithinLabel = t("% Within Plan");
@@ -53,7 +53,7 @@ export const Eelgrass: React.FunctionComponent<GeogProp> = (props) => {
   return (
     <ResultsCard
       title={titleLabel}
-      functionName="eelgrass"
+      functionName="bioclasticSand"
       extraParams={{ geographyIds: [curGeography.geographyId] }}
     >
       {(data: ReportResult) => {
@@ -80,12 +80,9 @@ export const Eelgrass: React.FunctionComponent<GeogProp> = (props) => {
         return (
           <ReportError>
             <p>
-              <Trans i18nKey="Eelgrass 1">
-                Eelgrass helps prevent erosion and maintain stability near shore
-                by anchoring sediment with its spreading rhizomes and slowing
-                water flow. Eelgrass beds also provide foraging, breeding, and
-                nursery areas for many species of invertebrates, fish, and
-                birds.
+              <Trans i18nKey="BioclasticSand 1">
+                This report summarizes this amount of bioclastic sand within the
+                plan.
               </Trans>
             </p>
 
@@ -145,14 +142,12 @@ export const Eelgrass: React.FunctionComponent<GeogProp> = (props) => {
             )}
 
             <Collapse title={t("Learn More")}>
-              <Trans i18nKey="Eelgrass - learn more">
+              <Trans i18nKey="BioclasticSand - learn more">
                 <p>🗺️ Source Data: Marine naturtyper ettter DN-håndbok 19</p>
                 <p>
-                  📈 Report: This report calculates the total value of each
-                  feature within the plan. This value is divided by the total
-                  value of each feature to obtain the % contained within the
-                  plan. If the plan includes multiple areas that overlap, the
-                  overlap is only counted once.
+                  📈 Report: This report calculates the total area of bioclastic
+                  sand within the plan. This value is divided by the total area
+                  of bioclastic sand to obtain the % contained within the plan.
                 </p>
               </Trans>
             </Collapse>

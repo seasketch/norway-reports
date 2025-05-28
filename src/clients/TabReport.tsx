@@ -9,6 +9,7 @@ import Translator from "../components/TranslatorAsync.js";
 import { Size } from "../components/Size.js";
 import { Eelgrass } from "../components/Eelgrass.js";
 import { Kelp } from "../components/Kelp.js";
+import { BioclasticSand } from "../components/BioclasticSand.js";
 
 const enableAllTabs = false;
 const BaseReport = () => {
@@ -35,6 +36,7 @@ const BaseReport = () => {
       <ReportPage hidden={!enableAllTabs && tab !== "Representation"}>
         <Eelgrass />
         <Kelp />
+        <BioclasticSand />
       </ReportPage>
     </>
   );
