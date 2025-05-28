@@ -2,10 +2,7 @@
   {
     "datasourceId": "world",
     "geo_type": "vector",
-    "formats": [
-      "json",
-      "fgb"
-    ],
+    "formats": ["json", "fgb"],
     "precalc": false,
     "metadata": {
       "name": "World Outline Polygon",
@@ -22,9 +19,7 @@
   {
     "datasourceId": "planningArea",
     "geo_type": "vector",
-    "formats": [
-      "fgb"
-    ],
+    "formats": ["fgb"],
     "precalc": true,
     "layerName": "planningArea",
     "classKeys": [],
@@ -37,46 +32,40 @@
   {
     "datasourceId": "eelgrass",
     "geo_type": "vector",
-    "formats": [
-      "fgb"
-    ],
+    "formats": ["fgb"],
     "precalc": true,
-    "layerName": "naturtype_marin_hb19_alegras.geojson",
+    "layerName": "eelgrassDissolvedClipped",
     "classKeys": [],
     "created": "2025-05-28T04:53:03.668Z",
-    "lastUpdated": "2025-05-28T05:07:09.425Z",
-    "src": "data/src/Reports/Eelgrass/naturtype_marin_hb19_alegras.geojson.json",
+    "lastUpdated": "2025-05-28T21:35:42.542Z",
+    "src": "data/src/Reports/Eelgrass/eelgrassDissolvedClipped.fgb",
     "propertiesToKeep": [],
     "explodeMulti": true
   },
   {
     "datasourceId": "kelp",
     "geo_type": "vector",
-    "formats": [
-      "fgb"
-    ],
+    "formats": ["fgb"],
     "precalc": true,
-    "layerName": "naturtype_marin_hb19_tare.geojson",
+    "layerName": "kelpForestDissolvedClipped",
     "classKeys": [],
     "created": "2025-05-28T05:24:21.657Z",
-    "lastUpdated": "2025-05-28T05:24:21.657Z",
-    "src": "data/src/Reports/KelpForest/naturtype_marin_hb19_tare.geojson.json",
+    "lastUpdated": "2025-05-28T21:33:15.966Z",
+    "src": "data/src/Reports/KelpForest/kelpForestDissolvedClipped.fgb",
     "propertiesToKeep": [],
     "explodeMulti": true
   },
   {
-    "src": "data/src/Reports/BioclasticSand/naturtype_marin_hb19_skjellsand.geojson.json",
-    "layerName": "naturtype_marin_hb19_skjellsand.geojson",
-    "geo_type": "vector",
     "datasourceId": "bioclasticSand",
-    "formats": [
-      "fgb"
-    ],
+    "geo_type": "vector",
+    "formats": ["fgb"],
+    "precalc": true,
+    "layerName": "bioclasticSandDissolvedClipped",
     "classKeys": [],
     "created": "2025-05-28T05:53:07.522Z",
-    "lastUpdated": "2025-05-28T05:53:07.522Z",
+    "lastUpdated": "2025-05-28T21:38:07.691Z",
+    "src": "data/src/Reports/BioclasticSand/bioclasticSandDissolvedClipped.fgb",
     "propertiesToKeep": [],
-    "explodeMulti": true,
-    "precalc": true
+    "explodeMulti": true
   }
 ]

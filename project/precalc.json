@@ -5,7 +5,7 @@
     "classId": "bioclasticSand-total",
     "sketchId": null,
     "groupId": null,
-    "value": 7371204.481113088
+    "value": 7028921.773545107
   },
   {
     "geographyId": "planningArea",
@@ -13,7 +13,7 @@
     "classId": "eelgrass-total",
     "sketchId": null,
     "groupId": null,
-    "value": 1958139.9530865704
+    "value": 1958119.8660515216
   },
   {
     "geographyId": "planningArea",
@@ -21,7 +21,7 @@
     "classId": "kelp-total",
     "sketchId": null,
     "groupId": null,
-    "value": 19097894.795633826
+    "value": 17486290.02203619
   },
   {
     "geographyId": "planningArea",
@@ -37,7 +37,7 @@
     "classId": "bioclasticSand-total",
     "sketchId": null,
     "groupId": null,
-    "value": 73
+    "value": 60
   },
   {
     "geographyId": "planningArea",
@@ -45,7 +45,7 @@
     "classId": "eelgrass-total",
     "sketchId": null,
     "groupId": null,
-    "value": 348
+    "value": 346
   },
   {
     "geographyId": "planningArea",
@@ -53,7 +53,7 @@
     "classId": "kelp-total",
     "sketchId": null,
     "groupId": null,
-    "value": 232
+    "value": 203
   },
   {
     "geographyId": "planningArea",
