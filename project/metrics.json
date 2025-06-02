@@ -13,6 +13,48 @@
     ]
   },
   {
+    "metricId": "ous",
+    "type": "valueOverlap",
+    "classes": [
+      {
+        "classId": "ous_recRodAndLine",
+        "display": "Recreational Fishing - Rod and Line",
+        "datasourceId": "ous_recRodAndLine",
+        "layerId": "D7FID3zQ8"
+      },
+      {
+        "classId": "ous_recPassiveGear",
+        "display": "Recreational Fishing - Passive Gear",
+        "datasourceId": "ous_recPassiveGear",
+        "layerId": "ycyDA8HUP"
+      },
+      {
+        "classId": "ous_comTrawling",
+        "display": "Commercial Fishing - Trawling",
+        "datasourceId": "ous_comTrawling",
+        "layerId": "KnB0RZOtm"
+      },
+      {
+        "classId": "ous_comNonTrawling",
+        "display": "Commercial Fishing - Non-Trawling",
+        "datasourceId": "ous_comNonTrawling",
+        "layerId": "Rs1BBq5yR"
+      },
+      {
+        "classId": "ous_divingHarvesting",
+        "display": "Diving - Harvesting",
+        "datasourceId": "ous_divingHarvesting",
+        "layerId": "xDyxK6Eu1"
+      },
+      {
+        "classId": "ous_divingNonHarvesting",
+        "display": "Diving - Non-Harvesting",
+        "datasourceId": "ous_divingNonHarvesting",
+        "layerId": "llwvBfHdv"
+      }
+    ]
+  },
+  {
     "metricId": "eelgrass",
     "type": "areaOverlap",
     "classes": [

@@ -16,6 +16,7 @@
     "src/functions/size.ts",
     "src/functions/eelgrass.ts",
     "src/functions/kelp.ts",
-    "src/functions/bioclasticSand.ts"
+    "src/functions/bioclasticSand.ts",
+    "src/functions/ous.ts"
   ]
 }

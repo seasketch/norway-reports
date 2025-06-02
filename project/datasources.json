@@ -2,7 +2,10 @@
   {
     "datasourceId": "world",
     "geo_type": "vector",
-    "formats": ["json", "fgb"],
+    "formats": [
+      "json",
+      "fgb"
+    ],
     "precalc": false,
     "metadata": {
       "name": "World Outline Polygon",
@@ -19,7 +22,9 @@
   {
     "datasourceId": "planningArea",
     "geo_type": "vector",
-    "formats": ["fgb"],
+    "formats": [
+      "fgb"
+    ],
     "precalc": true,
     "layerName": "planningArea",
     "classKeys": [],
@@ -32,7 +37,9 @@
   {
     "datasourceId": "eelgrass",
     "geo_type": "vector",
-    "formats": ["fgb"],
+    "formats": [
+      "fgb"
+    ],
     "precalc": true,
     "layerName": "eelgrassDissolvedClipped",
     "classKeys": [],
@@ -45,7 +52,9 @@
   {
     "datasourceId": "kelp",
     "geo_type": "vector",
-    "formats": ["fgb"],
+    "formats": [
+      "fgb"
+    ],
     "precalc": true,
     "layerName": "kelpForestDissolvedClipped",
     "classKeys": [],
@@ -58,7 +67,9 @@
   {
     "datasourceId": "bioclasticSand",
     "geo_type": "vector",
-    "formats": ["fgb"],
+    "formats": [
+      "fgb"
+    ],
     "precalc": true,
     "layerName": "bioclasticSandDissolvedClipped",
     "classKeys": [],
@@ -67,5 +78,89 @@
     "src": "data/src/Reports/BioclasticSand/bioclasticSandDissolvedClipped.fgb",
     "propertiesToKeep": [],
     "explodeMulti": true
+  },
+  {
+    "datasourceId": "ous_recRodAndLine",
+    "geo_type": "raster",
+    "formats": [
+      "tif"
+    ],
+    "precalc": true,
+    "measurementType": "quantitative",
+    "band": 1,
+    "noDataValue": 0,
+    "created": "2025-05-31T21:19:41.402Z",
+    "lastUpdated": "2025-05-31T21:19:41.402Z",
+    "src": "data/src/Reports/norway_heatmaps_2025/by_subsector/recreational_fishing_rod_and_line.tif"
+  },
+  {
+    "datasourceId": "ous_recPassiveGear",
+    "geo_type": "raster",
+    "formats": [
+      "tif"
+    ],
+    "precalc": true,
+    "measurementType": "quantitative",
+    "band": 1,
+    "noDataValue": 0,
+    "created": "2025-05-31T21:20:32.391Z",
+    "lastUpdated": "2025-05-31T21:20:32.391Z",
+    "src": "data/src/Reports/norway_heatmaps_2025/by_subsector/recreational_fishing_passive_gear.tif"
+  },
+  {
+    "datasourceId": "ous_comTrawling",
+    "geo_type": "raster",
+    "formats": [
+      "tif"
+    ],
+    "precalc": true,
+    "measurementType": "quantitative",
+    "band": 1,
+    "noDataValue": 0,
+    "created": "2025-05-31T21:21:26.191Z",
+    "lastUpdated": "2025-05-31T21:21:26.191Z",
+    "src": "data/src/Reports/norway_heatmaps_2025/by_subsector/commercial_fishing_trawling.tif"
+  },
+  {
+    "datasourceId": "ous_comNonTrawling",
+    "geo_type": "raster",
+    "formats": [
+      "tif"
+    ],
+    "precalc": true,
+    "measurementType": "quantitative",
+    "band": 1,
+    "noDataValue": 0,
+    "created": "2025-05-31T21:21:43.529Z",
+    "lastUpdated": "2025-05-31T21:21:43.529Z",
+    "src": "data/src/Reports/norway_heatmaps_2025/by_subsector/commercial_fishing_non_trawling.tif"
+  },
+  {
+    "datasourceId": "ous_divingNonHarvesting",
+    "geo_type": "raster",
+    "formats": [
+      "tif"
+    ],
+    "precalc": true,
+    "measurementType": "quantitative",
+    "band": 1,
+    "noDataValue": 0,
+    "created": "2025-05-31T21:22:04.024Z",
+    "lastUpdated": "2025-05-31T21:22:04.024Z",
+    "src": "data/src/Reports/norway_heatmaps_2025/by_subsector/diving_non_harvesting.tif"
+  },
+  {
+    "src": "data/src/Reports/norway_heatmaps_2025/by_subsector/diving_harvesting.tif",
+    "band": 1,
+    "geo_type": "raster",
+    "datasourceId": "ous_divingHarvesting",
+    "formats": [
+      "tif"
+    ],
+    "created": "2025-05-31T21:22:19.605Z",
+    "lastUpdated": "2025-05-31T21:22:19.605Z",
+    "noDataValue": 0,
+    "measurementType": "quantitative",
+    "precalc": true
   }
 ]

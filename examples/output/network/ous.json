@@ -1,0 +1,208 @@
+{
+  "metrics": [
+    {
+      "geographyId": null,
+      "metricId": "ous",
+      "classId": "ous_comNonTrawling",
+      "sketchId": "101895",
+      "groupId": "band-0",
+      "value": 236722.52462,
+      "extra": {
+        "sketchName": "test"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "ous",
+      "classId": "ous_comNonTrawling",
+      "sketchId": "102341",
+      "groupId": "band-0",
+      "value": 272357.401758,
+      "extra": {
+        "sketchName": "corner"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "ous",
+      "classId": "ous_comNonTrawling",
+      "sketchId": "102342",
+      "groupId": "band-0",
+      "value": 509007.344475,
+      "extra": {
+        "sketchName": "network",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "ous",
+      "classId": "ous_comTrawling",
+      "sketchId": "101895",
+      "groupId": "band-0",
+      "value": 469394.072146,
+      "extra": {
+        "sketchName": "test"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "ous",
+      "classId": "ous_comTrawling",
+      "sketchId": "102341",
+      "groupId": "band-0",
+      "value": 19981.537379,
+      "extra": {
+        "sketchName": "corner"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "ous",
+      "classId": "ous_comTrawling",
+      "sketchId": "102342",
+      "groupId": "band-0",
+      "value": 489342.555718,
+      "extra": {
+        "sketchName": "network",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "ous",
+      "classId": "ous_divingHarvesting",
+      "sketchId": "101895",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "test"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "ous",
+      "classId": "ous_divingHarvesting",
+      "sketchId": "102341",
+      "groupId": "band-0",
+      "value": 195356.802477,
+      "extra": {
+        "sketchName": "corner"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "ous",
+      "classId": "ous_divingHarvesting",
+      "sketchId": "102342",
+      "groupId": "band-0",
+      "value": 195356.802477,
+      "extra": {
+        "sketchName": "network",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "ous",
+      "classId": "ous_divingNonHarvesting",
+      "sketchId": "101895",
+      "groupId": "band-0",
+      "value": 225733.296716,
+      "extra": {
+        "sketchName": "test"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "ous",
+      "classId": "ous_divingNonHarvesting",
+      "sketchId": "102341",
+      "groupId": "band-0",
+      "value": 551031.835101,
+      "extra": {
+        "sketchName": "corner"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "ous",
+      "classId": "ous_divingNonHarvesting",
+      "sketchId": "102342",
+      "groupId": "band-0",
+      "value": 776765.131817,
+      "extra": {
+        "sketchName": "network",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "ous",
+      "classId": "ous_recPassiveGear",
+      "sketchId": "101895",
+      "groupId": "band-0",
+      "value": 1192096.601454,
+      "extra": {
+        "sketchName": "test"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "ous",
+      "classId": "ous_recPassiveGear",
+      "sketchId": "102341",
+      "groupId": "band-0",
+      "value": 1488371.533573,
+      "extra": {
+        "sketchName": "corner"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "ous",
+      "classId": "ous_recPassiveGear",
+      "sketchId": "102342",
+      "groupId": "band-0",
+      "value": 2680303.259383,
+      "extra": {
+        "sketchName": "network",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "ous",
+      "classId": "ous_recRodAndLine",
+      "sketchId": "101895",
+      "groupId": "band-0",
+      "value": 752744.83637,
+      "extra": {
+        "sketchName": "test"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "ous",
+      "classId": "ous_recRodAndLine",
+      "sketchId": "102341",
+      "groupId": "band-0",
+      "value": 1933031.454985,
+      "extra": {
+        "sketchName": "corner"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "ous",
+      "classId": "ous_recRodAndLine",
+      "sketchId": "102342",
+      "groupId": "band-0",
+      "value": 2685674.088395,
+      "extra": {
+        "sketchName": "network",
+        "isCollection": true
+      }
+    }
+  ]
+}

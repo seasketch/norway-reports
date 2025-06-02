@@ -26,6 +26,54 @@
   {
     "geographyId": "planningArea",
     "metricId": "area",
+    "classId": "ous_comNonTrawling-total",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 554157322.422622
+  },
+  {
+    "geographyId": "planningArea",
+    "metricId": "area",
+    "classId": "ous_comTrawling-total",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 453800487.848224
+  },
+  {
+    "geographyId": "planningArea",
+    "metricId": "area",
+    "classId": "ous_divingHarvesting-total",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 193025823.073274
+  },
+  {
+    "geographyId": "planningArea",
+    "metricId": "area",
+    "classId": "ous_divingNonHarvesting-total",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 292081719.609265
+  },
+  {
+    "geographyId": "planningArea",
+    "metricId": "area",
+    "classId": "ous_recPassiveGear-total",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 593809514.633692
+  },
+  {
+    "geographyId": "planningArea",
+    "metricId": "area",
+    "classId": "ous_recRodAndLine-total",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 630387922.755301
+  },
+  {
+    "geographyId": "planningArea",
+    "metricId": "area",
     "classId": "planningArea-total",
     "sketchId": null,
     "groupId": null,
@@ -58,9 +106,153 @@
   {
     "geographyId": "planningArea",
     "metricId": "count",
+    "classId": "ous_comNonTrawling-total",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 5170000
+  },
+  {
+    "geographyId": "planningArea",
+    "metricId": "count",
+    "classId": "ous_comTrawling-total",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 4613644
+  },
+  {
+    "geographyId": "planningArea",
+    "metricId": "count",
+    "classId": "ous_divingHarvesting-total",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 3430896
+  },
+  {
+    "geographyId": "planningArea",
+    "metricId": "count",
+    "classId": "ous_divingNonHarvesting-total",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 3430896
+  },
+  {
+    "geographyId": "planningArea",
+    "metricId": "count",
+    "classId": "ous_recPassiveGear-total",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 5887876
+  },
+  {
+    "geographyId": "planningArea",
+    "metricId": "count",
+    "classId": "ous_recRodAndLine-total",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 5958528
+  },
+  {
+    "geographyId": "planningArea",
+    "metricId": "count",
     "classId": "planningArea-total",
     "sketchId": null,
     "groupId": null,
     "value": 1
+  },
+  {
+    "geographyId": "planningArea",
+    "metricId": "sum",
+    "classId": "ous_comNonTrawling-total",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 10568079.324387
+  },
+  {
+    "geographyId": "planningArea",
+    "metricId": "sum",
+    "classId": "ous_comTrawling-total",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 2476694.24317
+  },
+  {
+    "geographyId": "planningArea",
+    "metricId": "sum",
+    "classId": "ous_divingHarvesting-total",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 6699331.611703
+  },
+  {
+    "geographyId": "planningArea",
+    "metricId": "sum",
+    "classId": "ous_divingNonHarvesting-total",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 17510896.483344
+  },
+  {
+    "geographyId": "planningArea",
+    "metricId": "sum",
+    "classId": "ous_recPassiveGear-total",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 92038328.758157
+  },
+  {
+    "geographyId": "planningArea",
+    "metricId": "sum",
+    "classId": "ous_recRodAndLine-total",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 78539972.56953
+  },
+  {
+    "geographyId": "planningArea",
+    "metricId": "valid",
+    "classId": "ous_comNonTrawling-total",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 4023775
+  },
+  {
+    "geographyId": "planningArea",
+    "metricId": "valid",
+    "classId": "ous_comTrawling-total",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 3122783
+  },
+  {
+    "geographyId": "planningArea",
+    "metricId": "valid",
+    "classId": "ous_divingHarvesting-total",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 1260482
+  },
+  {
+    "geographyId": "planningArea",
+    "metricId": "valid",
+    "classId": "ous_divingNonHarvesting-total",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 1907329
+  },
+  {
+    "geographyId": "planningArea",
+    "metricId": "valid",
+    "classId": "ous_recPassiveGear-total",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 4303509
+  },
+  {
+    "geographyId": "planningArea",
+    "metricId": "valid",
+    "classId": "ous_recRodAndLine-total",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 4622937
   }
 ]

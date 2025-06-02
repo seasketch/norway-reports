@@ -10,6 +10,7 @@ import { Size } from "../components/Size.js";
 import { Eelgrass } from "../components/Eelgrass.js";
 import { Kelp } from "../components/Kelp.js";
 import { BioclasticSand } from "../components/BioclasticSand.js";
+import { Ous } from "../components/Ous.js";
 
 const enableAllTabs = false;
 const BaseReport = () => {
@@ -31,6 +32,7 @@ const BaseReport = () => {
       </div>
       <ReportPage hidden={!enableAllTabs && tab !== "Viability"}>
         <Size />
+        <Ous />
         <SketchAttributesCard autoHide />
       </ReportPage>
       <ReportPage hidden={!enableAllTabs && tab !== "Representation"}>
