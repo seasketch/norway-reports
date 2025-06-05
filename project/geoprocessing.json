@@ -17,6 +17,7 @@
     "src/functions/eelgrass.ts",
     "src/functions/kelp.ts",
     "src/functions/bioclasticSand.ts",
-    "src/functions/ous.ts"
+    "src/functions/ous.ts",
+    "src/functions/codSpawningGrounds.ts"
   ]
 }

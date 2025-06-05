@@ -89,5 +89,17 @@
         "layerId": "0pIOvT11X"
       }
     ]
+  },
+  {
+    "metricId": "codSpawningGrounds",
+    "type": "areaOverlap",
+    "classes": [
+      {
+        "classId": "codSpawningGrounds",
+        "display": "Cod Spawning Grounds",
+        "datasourceId": "cod_spawning_grounds",
+        "layerId": "Y1qY5FyUq"
+      }
+    ]
   }
 ]

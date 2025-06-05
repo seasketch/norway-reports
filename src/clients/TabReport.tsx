@@ -11,6 +11,7 @@ import { Eelgrass } from "../components/Eelgrass.js";
 import { Kelp } from "../components/Kelp.js";
 import { BioclasticSand } from "../components/BioclasticSand.js";
 import { Ous } from "../components/Ous.js";
+import { CodSpawningGrounds } from "../components/CodSpawningGrounds.js";
 
 const enableAllTabs = false;
 const BaseReport = () => {
@@ -39,6 +40,7 @@ const BaseReport = () => {
         <Eelgrass />
         <Kelp />
         <BioclasticSand />
+        <CodSpawningGrounds />
       </ReportPage>
     </>
   );

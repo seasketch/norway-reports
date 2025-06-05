@@ -1,0 +1,38 @@
+{
+  "metrics": [
+    {
+      "geographyId": null,
+      "metricId": "codSpawningGrounds",
+      "classId": "codSpawningGrounds",
+      "sketchId": "101895",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "test"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "codSpawningGrounds",
+      "classId": "codSpawningGrounds",
+      "sketchId": "102341",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "corner"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "codSpawningGrounds",
+      "classId": "codSpawningGrounds",
+      "sketchId": "102342",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "network",
+        "isCollection": true
+      }
+    }
+  ]
+}

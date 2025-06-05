@@ -10,6 +10,14 @@
   {
     "geographyId": "planningArea",
     "metricId": "area",
+    "classId": "cod_spawning_grounds-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 13737741.269385971
+  },
+  {
+    "geographyId": "planningArea",
+    "metricId": "area",
     "classId": "eelgrass-total",
     "sketchId": null,
     "groupId": null,
@@ -86,6 +94,14 @@
     "sketchId": null,
     "groupId": null,
     "value": 60
+  },
+  {
+    "geographyId": "planningArea",
+    "metricId": "count",
+    "classId": "cod_spawning_grounds-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 27
   },
   {
     "geographyId": "planningArea",

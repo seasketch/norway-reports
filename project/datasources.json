@@ -150,17 +150,32 @@
     "src": "data/src/Reports/norway_heatmaps_2025/by_subsector/diving_non_harvesting.tif"
   },
   {
-    "src": "data/src/Reports/norway_heatmaps_2025/by_subsector/diving_harvesting.tif",
-    "band": 1,
-    "geo_type": "raster",
     "datasourceId": "ous_divingHarvesting",
+    "geo_type": "raster",
     "formats": [
       "tif"
     ],
+    "precalc": true,
+    "measurementType": "quantitative",
+    "band": 1,
+    "noDataValue": 0,
     "created": "2025-05-31T21:22:19.605Z",
     "lastUpdated": "2025-05-31T21:22:19.605Z",
-    "noDataValue": 0,
-    "measurementType": "quantitative",
+    "src": "data/src/Reports/norway_heatmaps_2025/by_subsector/diving_harvesting.tif"
+  },
+  {
+    "src": "data/src/Reports/CodSpawningGrounds/Gytefelt_torsk_MB/Gytefelt_torsk_MB.shp",
+    "layerName": "Gytefelt_torsk_MB",
+    "geo_type": "vector",
+    "datasourceId": "cod_spawning_grounds",
+    "formats": [
+      "fgb"
+    ],
+    "classKeys": [],
+    "created": "2025-06-05T08:58:22.534Z",
+    "lastUpdated": "2025-06-05T08:58:22.534Z",
+    "propertiesToKeep": [],
+    "explodeMulti": true,
     "precalc": true
   }
 ]
