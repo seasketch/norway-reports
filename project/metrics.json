@@ -55,6 +55,17 @@
     ]
   },
   {
+    "metricId": "depth",
+    "type": "valueOverlap",
+    "layerId": "t4Zdhro31",
+    "datasourceId": "depth",
+    "classes": [
+      { "classId": "min", "display": "Min" },
+      { "classId": "mean", "display": "Mean" },
+      { "classId": "max", "display": "Max" }
+    ]
+  },
+  {
     "metricId": "eelgrass",
     "type": "areaOverlap",
     "classes": [

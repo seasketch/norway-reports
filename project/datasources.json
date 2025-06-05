@@ -2,10 +2,7 @@
   {
     "datasourceId": "world",
     "geo_type": "vector",
-    "formats": [
-      "json",
-      "fgb"
-    ],
+    "formats": ["json", "fgb"],
     "precalc": false,
     "metadata": {
       "name": "World Outline Polygon",
@@ -22,9 +19,7 @@
   {
     "datasourceId": "planningArea",
     "geo_type": "vector",
-    "formats": [
-      "fgb"
-    ],
+    "formats": ["fgb"],
     "precalc": true,
     "layerName": "planningArea",
     "classKeys": [],
@@ -37,9 +32,7 @@
   {
     "datasourceId": "eelgrass",
     "geo_type": "vector",
-    "formats": [
-      "fgb"
-    ],
+    "formats": ["fgb"],
     "precalc": true,
     "layerName": "eelgrassDissolvedClipped",
     "classKeys": [],
@@ -52,9 +45,7 @@
   {
     "datasourceId": "kelp",
     "geo_type": "vector",
-    "formats": [
-      "fgb"
-    ],
+    "formats": ["fgb"],
     "precalc": true,
     "layerName": "kelpForestDissolvedClipped",
     "classKeys": [],
@@ -67,9 +58,7 @@
   {
     "datasourceId": "bioclasticSand",
     "geo_type": "vector",
-    "formats": [
-      "fgb"
-    ],
+    "formats": ["fgb"],
     "precalc": true,
     "layerName": "bioclasticSandDissolvedClipped",
     "classKeys": [],
@@ -82,9 +71,7 @@
   {
     "datasourceId": "ous_recRodAndLine",
     "geo_type": "raster",
-    "formats": [
-      "tif"
-    ],
+    "formats": ["tif"],
     "precalc": true,
     "measurementType": "quantitative",
     "band": 1,
@@ -96,9 +83,7 @@
   {
     "datasourceId": "ous_recPassiveGear",
     "geo_type": "raster",
-    "formats": [
-      "tif"
-    ],
+    "formats": ["tif"],
     "precalc": true,
     "measurementType": "quantitative",
     "band": 1,
@@ -110,9 +95,7 @@
   {
     "datasourceId": "ous_comTrawling",
     "geo_type": "raster",
-    "formats": [
-      "tif"
-    ],
+    "formats": ["tif"],
     "precalc": true,
     "measurementType": "quantitative",
     "band": 1,
@@ -124,9 +107,7 @@
   {
     "datasourceId": "ous_comNonTrawling",
     "geo_type": "raster",
-    "formats": [
-      "tif"
-    ],
+    "formats": ["tif"],
     "precalc": true,
     "measurementType": "quantitative",
     "band": 1,
@@ -138,9 +119,7 @@
   {
     "datasourceId": "ous_divingNonHarvesting",
     "geo_type": "raster",
-    "formats": [
-      "tif"
-    ],
+    "formats": ["tif"],
     "precalc": true,
     "measurementType": "quantitative",
     "band": 1,
@@ -152,9 +131,7 @@
   {
     "datasourceId": "ous_divingHarvesting",
     "geo_type": "raster",
-    "formats": [
-      "tif"
-    ],
+    "formats": ["tif"],
     "precalc": true,
     "measurementType": "quantitative",
     "band": 1,
@@ -164,18 +141,28 @@
     "src": "data/src/Reports/norway_heatmaps_2025/by_subsector/diving_harvesting.tif"
   },
   {
-    "src": "data/src/Reports/CodSpawningGrounds/Gytefelt_torsk_MB/Gytefelt_torsk_MB.shp",
-    "layerName": "Gytefelt_torsk_MB",
-    "geo_type": "vector",
     "datasourceId": "cod_spawning_grounds",
-    "formats": [
-      "fgb"
-    ],
+    "geo_type": "vector",
+    "formats": ["fgb"],
+    "precalc": true,
+    "layerName": "Gytefelt_torsk_MB",
     "classKeys": [],
     "created": "2025-06-05T08:58:22.534Z",
     "lastUpdated": "2025-06-05T08:58:22.534Z",
+    "src": "data/src/Reports/CodSpawningGrounds/Gytefelt_torsk_MB/Gytefelt_torsk_MB.shp",
     "propertiesToKeep": [],
-    "explodeMulti": true,
+    "explodeMulti": true
+  },
+  {
+    "src": "data/src/Reports/Depth/gebco2024.tif",
+    "band": 1,
+    "geo_type": "raster",
+    "datasourceId": "depth",
+    "formats": ["tif"],
+    "created": "2025-06-05T09:33:52.661Z",
+    "lastUpdated": "2025-06-05T09:33:52.661Z",
+    "noDataValue": -32767,
+    "measurementType": "quantitative",
     "precalc": true
   }
 ]

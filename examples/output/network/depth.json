@@ -1,0 +1,23 @@
+[
+  {
+    "min": -463,
+    "max": -128,
+    "mean": -299.6321974148061,
+    "units": "meters",
+    "sketchName": "test"
+  },
+  {
+    "min": -136,
+    "max": 8,
+    "mean": -56.472972972972975,
+    "units": "meters",
+    "sketchName": "corner"
+  },
+  {
+    "min": -463,
+    "max": 0,
+    "units": "meters",
+    "sketchName": "network",
+    "isCollection": true
+  }
+]

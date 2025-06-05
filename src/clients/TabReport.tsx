@@ -12,6 +12,7 @@ import { Kelp } from "../components/Kelp.js";
 import { BioclasticSand } from "../components/BioclasticSand.js";
 import { Ous } from "../components/Ous.js";
 import { CodSpawningGrounds } from "../components/CodSpawningGrounds.js";
+import { Depth } from "../components/Depth.js";
 
 const enableAllTabs = false;
 const BaseReport = () => {
@@ -37,6 +38,7 @@ const BaseReport = () => {
         <SketchAttributesCard autoHide />
       </ReportPage>
       <ReportPage hidden={!enableAllTabs && tab !== "Representation"}>
+        <Depth />
         <Eelgrass />
         <Kelp />
         <BioclasticSand />
