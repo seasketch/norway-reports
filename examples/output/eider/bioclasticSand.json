@@ -1,0 +1,15 @@
+{
+  "metrics": [
+    {
+      "geographyId": null,
+      "metricId": "bioclasticSand",
+      "classId": "bioclasticSand",
+      "sketchId": "111624",
+      "groupId": null,
+      "value": 121693.692964,
+      "extra": {
+        "sketchName": "eider"
+      }
+    }
+  ]
+}

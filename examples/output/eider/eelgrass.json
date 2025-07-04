@@ -1,0 +1,15 @@
+{
+  "metrics": [
+    {
+      "geographyId": null,
+      "metricId": "eelgrass",
+      "classId": "eelgrass",
+      "sketchId": "111624",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "eider"
+      }
+    }
+  ]
+}

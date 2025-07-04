@@ -4,88 +4,88 @@
       "geographyId": null,
       "metricId": "seabirdNests",
       "classId": "aerfugl",
-      "sketchId": "102341",
+      "sketchId": "111624",
       "groupId": null,
-      "value": 10,
+      "value": 6,
       "extra": {
-        "sketchName": "corner"
+        "sketchName": "eider"
       }
     },
     {
       "geographyId": null,
       "metricId": "seabirdNests",
       "classId": "fiskemaake",
-      "sketchId": "102341",
+      "sketchId": "111624",
       "groupId": null,
-      "value": 44,
+      "value": 0,
       "extra": {
-        "sketchName": "corner"
+        "sketchName": "eider"
       }
     },
     {
       "geographyId": null,
       "metricId": "seabirdNests",
       "classId": "graamaake",
-      "sketchId": "102341",
+      "sketchId": "111624",
       "groupId": null,
-      "value": 45,
+      "value": 104,
       "extra": {
-        "sketchName": "corner"
+        "sketchName": "eider"
       }
     },
     {
       "geographyId": null,
       "metricId": "seabirdNests",
       "classId": "hettemaake",
-      "sketchId": "102341",
+      "sketchId": "111624",
       "groupId": null,
       "value": 0,
       "extra": {
-        "sketchName": "corner"
+        "sketchName": "eider"
       }
     },
     {
       "geographyId": null,
       "metricId": "seabirdNests",
       "classId": "makrellterne",
-      "sketchId": "102341",
+      "sketchId": "111624",
       "groupId": null,
-      "value": 18,
+      "value": 0,
       "extra": {
-        "sketchName": "corner"
+        "sketchName": "eider"
       }
     },
     {
       "geographyId": null,
       "metricId": "seabirdNests",
       "classId": "storskarv",
-      "sketchId": "102341",
+      "sketchId": "111624",
       "groupId": null,
       "value": 0,
       "extra": {
-        "sketchName": "corner"
+        "sketchName": "eider"
       }
     },
     {
       "geographyId": null,
       "metricId": "seabirdNests",
       "classId": "svartbak",
-      "sketchId": "102341",
+      "sketchId": "111624",
       "groupId": null,
-      "value": 11,
+      "value": 7,
       "extra": {
-        "sketchName": "corner"
+        "sketchName": "eider"
       }
     },
     {
       "geographyId": null,
       "metricId": "seabirdNests",
       "classId": "tjeld",
-      "sketchId": "102341",
+      "sketchId": "111624",
       "groupId": null,
-      "value": 1,
+      "value": 0,
       "extra": {
-        "sketchName": "corner"
+        "sketchName": "eider"
       }
     }
   ]

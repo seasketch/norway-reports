@@ -1,0 +1,15 @@
+{
+  "metrics": [
+    {
+      "geographyId": null,
+      "metricId": "size",
+      "classId": "planningArea",
+      "sketchId": "111624",
+      "groupId": null,
+      "value": 650773.622412,
+      "extra": {
+        "sketchName": "eider"
+      }
+    }
+  ]
+}

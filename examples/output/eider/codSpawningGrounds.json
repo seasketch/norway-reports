@@ -1,0 +1,15 @@
+{
+  "metrics": [
+    {
+      "geographyId": null,
+      "metricId": "codSpawningGrounds",
+      "classId": "codSpawningGrounds",
+      "sketchId": "111624",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "eider"
+      }
+    }
+  ]
+}

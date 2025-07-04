@@ -11,6 +11,8 @@ import {
   overlapFeatures,
   getFeaturesForSketchBBoxes,
   overlapPolygonSum,
+  loadCog,
+  loadFgb,
 } from "@seasketch/geoprocessing";
 import project from "../../project/projectClient.js";
 import {
@@ -19,7 +21,7 @@ import {
   rekeyMetrics,
   sortMetrics,
 } from "@seasketch/geoprocessing/client-core";
-import { clipToGeography } from "../util/clipToGeography.js";
+import { bbox } from "@turf/turf";
 
 /**
  * seabirdNests: A geoprocessing function that calculates overlap metrics for vector datasources
@@ -52,7 +54,8 @@ export async function seabirdNests(
         // Fetch features overlapping with sketch, if not already fetched
         const features =
           featuresByDatasource[ds.datasourceId] ||
-          (await getFeaturesForSketchBBoxes(sketch, url));
+          (await loadFgb(url, sketch.bbox || bbox(sketch)));
+        console.log(sketch.properties.name, curClass.classId, features.length);
         featuresByDatasource[ds.datasourceId] = features;
 
         // Get classKey for current data class
@@ -73,6 +76,11 @@ export async function seabirdNests(
               feat.properties[classKey] === curClass.classId,
           );
         }
+        console.log(
+          sketch.properties.name,
+          curClass.classId,
+          finalFeatures.length,
+        );
 
         // Calculate overlap metrics
         const overlapResult = await overlapPolygonSum(
@@ -80,6 +88,8 @@ export async function seabirdNests(
           finalFeatures,
           sketch,
         );
+
+        console.log(sketch.properties.name, curClass.classId, overlapResult);
 
         return overlapResult.map(
           (metric): Metric => ({

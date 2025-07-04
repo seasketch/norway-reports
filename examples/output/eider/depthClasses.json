@@ -1,0 +1,103 @@
+{
+  "metrics": [
+    {
+      "geographyId": null,
+      "metricId": "depthClasses",
+      "classId": "1",
+      "sketchId": "111624",
+      "groupId": "band-0",
+      "value": 1,
+      "extra": {
+        "sketchName": "eider"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "depthClasses",
+      "classId": "2",
+      "sketchId": "111624",
+      "groupId": "band-0",
+      "value": 2,
+      "extra": {
+        "sketchName": "eider"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "depthClasses",
+      "classId": "3",
+      "sketchId": "111624",
+      "groupId": "band-0",
+      "value": 2,
+      "extra": {
+        "sketchName": "eider"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "depthClasses",
+      "classId": "4",
+      "sketchId": "111624",
+      "groupId": "band-0",
+      "value": 1,
+      "extra": {
+        "sketchName": "eider"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "depthClasses",
+      "classId": "5",
+      "sketchId": "111624",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "eider"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "depthClasses",
+      "classId": "6",
+      "sketchId": "111624",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "eider"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "depthClasses",
+      "classId": "7",
+      "sketchId": "111624",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "eider"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "depthClasses",
+      "classId": "8",
+      "sketchId": "111624",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "eider"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "depthClasses",
+      "classId": "9",
+      "sketchId": "111624",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "eider"
+      }
+    }
+  ]
+}

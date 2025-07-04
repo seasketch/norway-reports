@@ -17,7 +17,7 @@
       "classId": "aerfugl",
       "sketchId": "102341",
       "groupId": null,
-      "value": 1,
+      "value": 10,
       "extra": {
         "sketchName": "corner"
       }
@@ -28,7 +28,7 @@
       "classId": "aerfugl",
       "sketchId": "102342",
       "groupId": null,
-      "value": 1,
+      "value": 10,
       "extra": {
         "sketchName": "network",
         "isCollection": true
@@ -51,7 +51,7 @@
       "classId": "fiskemaake",
       "sketchId": "102341",
       "groupId": null,
-      "value": 7,
+      "value": 44,
       "extra": {
         "sketchName": "corner"
       }
@@ -62,7 +62,7 @@
       "classId": "fiskemaake",
       "sketchId": "102342",
       "groupId": null,
-      "value": 7,
+      "value": 44,
       "extra": {
         "sketchName": "network",
         "isCollection": true
@@ -85,7 +85,7 @@
       "classId": "graamaake",
       "sketchId": "102341",
       "groupId": null,
-      "value": 4,
+      "value": 45,
       "extra": {
         "sketchName": "corner"
       }
@@ -96,7 +96,7 @@
       "classId": "graamaake",
       "sketchId": "102342",
       "groupId": null,
-      "value": 4,
+      "value": 45,
       "extra": {
         "sketchName": "network",
         "isCollection": true
@@ -153,7 +153,7 @@
       "classId": "makrellterne",
       "sketchId": "102341",
       "groupId": null,
-      "value": 1,
+      "value": 18,
       "extra": {
         "sketchName": "corner"
       }
@@ -164,7 +164,7 @@
       "classId": "makrellterne",
       "sketchId": "102342",
       "groupId": null,
-      "value": 1,
+      "value": 18,
       "extra": {
         "sketchName": "network",
         "isCollection": true
@@ -221,7 +221,7 @@
       "classId": "svartbak",
       "sketchId": "102341",
       "groupId": null,
-      "value": 7,
+      "value": 11,
       "extra": {
         "sketchName": "corner"
       }
@@ -232,7 +232,7 @@
       "classId": "svartbak",
       "sketchId": "102342",
       "groupId": null,
-      "value": 7,
+      "value": 11,
       "extra": {
         "sketchName": "network",
         "isCollection": true

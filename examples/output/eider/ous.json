@@ -1,0 +1,70 @@
+{
+  "metrics": [
+    {
+      "geographyId": null,
+      "metricId": "ous",
+      "classId": "ous_comNonTrawling",
+      "sketchId": "111624",
+      "groupId": "band-0",
+      "value": 33237.051012,
+      "extra": {
+        "sketchName": "eider"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "ous",
+      "classId": "ous_comTrawling",
+      "sketchId": "111624",
+      "groupId": "band-0",
+      "value": 4167.966139,
+      "extra": {
+        "sketchName": "eider"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "ous",
+      "classId": "ous_divingHarvesting",
+      "sketchId": "111624",
+      "groupId": "band-0",
+      "value": 28870.048713,
+      "extra": {
+        "sketchName": "eider"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "ous",
+      "classId": "ous_divingNonHarvesting",
+      "sketchId": "111624",
+      "groupId": "band-0",
+      "value": 93125.9606,
+      "extra": {
+        "sketchName": "eider"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "ous",
+      "classId": "ous_recPassiveGear",
+      "sketchId": "111624",
+      "groupId": "band-0",
+      "value": 662537.323586,
+      "extra": {
+        "sketchName": "eider"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "ous",
+      "classId": "ous_recRodAndLine",
+      "sketchId": "111624",
+      "groupId": "band-0",
+      "value": 286448.634792,
+      "extra": {
+        "sketchName": "eider"
+      }
+    }
+  ]
+}
