@@ -298,18 +298,32 @@
     "explodeMulti": true
   },
   {
-    "src": "data/src/Reports/SeabirdNestingAreas/aerfugl_buffer.fgb",
-    "layerName": "aerfugl_buffer",
-    "geo_type": "vector",
     "datasourceId": "aerfugl",
+    "geo_type": "vector",
     "formats": [
       "fgb"
     ],
+    "precalc": true,
+    "layerName": "aerfugl_buffer",
     "classKeys": [],
     "created": "2025-07-04T02:42:33.369Z",
     "lastUpdated": "2025-07-04T02:42:33.369Z",
+    "src": "data/src/Reports/SeabirdNestingAreas/aerfugl_buffer.fgb",
     "propertiesToKeep": [],
-    "explodeMulti": true,
+    "explodeMulti": true
+  },
+  {
+    "src": "data/src/Reports/Depth/depthClasses.tif",
+    "band": 1,
+    "geo_type": "raster",
+    "datasourceId": "depthClasses",
+    "formats": [
+      "tif"
+    ],
+    "created": "2025-07-04T03:46:13.200Z",
+    "lastUpdated": "2025-07-04T03:46:13.200Z",
+    "noDataValue": -3.4028235e+38,
+    "measurementType": "categorical",
     "precalc": true
   }
 ]

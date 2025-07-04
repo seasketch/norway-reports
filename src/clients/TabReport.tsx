@@ -14,6 +14,7 @@ import { Ous } from "../components/Ous.js";
 import { CodSpawningGrounds } from "../components/CodSpawningGrounds.js";
 import { Depth } from "../components/Depth.js";
 import { SeabirdNests } from "../components/SeabirdNests.js";
+import { DepthClassesCard } from "../components/DepthClasses.js";
 
 const enableAllTabs = false;
 const BaseReport = () => {
@@ -39,7 +40,7 @@ const BaseReport = () => {
         <SketchAttributesCard autoHide />
       </ReportPage>
       <ReportPage hidden={!enableAllTabs && tab !== "Representation"}>
-        <Depth />
+        <DepthClassesCard />
         <Eelgrass />
         <Kelp />
         <BioclasticSand />

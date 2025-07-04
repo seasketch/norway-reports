@@ -55,14 +55,20 @@
     ]
   },
   {
-    "metricId": "depth",
-    "type": "valueOverlap",
+    "metricId": "depthClasses",
+    "type": "areaOverlap",
     "layerId": "t4Zdhro31",
-    "datasourceId": "depth",
+    "datasourceId": "depthClasses",
     "classes": [
-      { "classId": "min", "display": "Min" },
-      { "classId": "mean", "display": "Mean" },
-      { "classId": "max", "display": "Max" }
+      { "classKey": "1", "classId": "1", "display": "0 to 5 m" },
+      { "classKey": "2", "classId": "2", "display": "5 to 20 m" },
+      { "classKey": "3", "classId": "3", "display": "20 to 50 m" },
+      { "classKey": "4", "classId": "4", "display": "50 to 100 m" },
+      { "classKey": "5", "classId": "5", "display": "100 to 200 m" },
+      { "classKey": "6", "classId": "6", "display": "200 to 300 m" },
+      { "classKey": "7", "classId": "7", "display": "300 to 400 m" },
+      { "classKey": "8", "classId": "8", "display": "400 to 500 m" },
+      { "classKey": "9", "classId": "9", "display": "500+ m" }
     ]
   },
   {

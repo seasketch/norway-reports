@@ -354,6 +354,78 @@
   {
     "geographyId": "planningArea",
     "metricId": "valid",
+    "classId": "depthClasses-1",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 249
+  },
+  {
+    "geographyId": "planningArea",
+    "metricId": "valid",
+    "classId": "depthClasses-2",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 497
+  },
+  {
+    "geographyId": "planningArea",
+    "metricId": "valid",
+    "classId": "depthClasses-3",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 554
+  },
+  {
+    "geographyId": "planningArea",
+    "metricId": "valid",
+    "classId": "depthClasses-4",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 632
+  },
+  {
+    "geographyId": "planningArea",
+    "metricId": "valid",
+    "classId": "depthClasses-5",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 678
+  },
+  {
+    "geographyId": "planningArea",
+    "metricId": "valid",
+    "classId": "depthClasses-6",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 532
+  },
+  {
+    "geographyId": "planningArea",
+    "metricId": "valid",
+    "classId": "depthClasses-7",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 1061
+  },
+  {
+    "geographyId": "planningArea",
+    "metricId": "valid",
+    "classId": "depthClasses-8",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 1562
+  },
+  {
+    "geographyId": "planningArea",
+    "metricId": "valid",
+    "classId": "depthClasses-9",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 1052
+  },
+  {
+    "geographyId": "planningArea",
+    "metricId": "valid",
     "classId": "ous_comNonTrawling-total",
     "sketchId": null,
     "groupId": "band-0",

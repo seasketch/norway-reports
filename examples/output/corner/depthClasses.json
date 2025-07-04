@@ -1,0 +1,103 @@
+{
+  "metrics": [
+    {
+      "geographyId": null,
+      "metricId": "depthClasses",
+      "classId": "1",
+      "sketchId": "102341",
+      "groupId": "band-0",
+      "value": 3,
+      "extra": {
+        "sketchName": "corner"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "depthClasses",
+      "classId": "2",
+      "sketchId": "102341",
+      "groupId": "band-0",
+      "value": 6,
+      "extra": {
+        "sketchName": "corner"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "depthClasses",
+      "classId": "3",
+      "sketchId": "102341",
+      "groupId": "band-0",
+      "value": 24,
+      "extra": {
+        "sketchName": "corner"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "depthClasses",
+      "classId": "4",
+      "sketchId": "102341",
+      "groupId": "band-0",
+      "value": 36,
+      "extra": {
+        "sketchName": "corner"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "depthClasses",
+      "classId": "5",
+      "sketchId": "102341",
+      "groupId": "band-0",
+      "value": 5,
+      "extra": {
+        "sketchName": "corner"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "depthClasses",
+      "classId": "6",
+      "sketchId": "102341",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "corner"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "depthClasses",
+      "classId": "7",
+      "sketchId": "102341",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "corner"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "depthClasses",
+      "classId": "8",
+      "sketchId": "102341",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "corner"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "depthClasses",
+      "classId": "9",
+      "sketchId": "102341",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "corner"
+      }
+    }
+  ]
+}
