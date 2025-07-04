@@ -2,7 +2,10 @@
   {
     "datasourceId": "world",
     "geo_type": "vector",
-    "formats": ["json", "fgb"],
+    "formats": [
+      "json",
+      "fgb"
+    ],
     "precalc": false,
     "metadata": {
       "name": "World Outline Polygon",
@@ -19,7 +22,9 @@
   {
     "datasourceId": "planningArea",
     "geo_type": "vector",
-    "formats": ["fgb"],
+    "formats": [
+      "fgb"
+    ],
     "precalc": true,
     "layerName": "planningArea",
     "classKeys": [],
@@ -32,7 +37,9 @@
   {
     "datasourceId": "eelgrass",
     "geo_type": "vector",
-    "formats": ["fgb"],
+    "formats": [
+      "fgb"
+    ],
     "precalc": true,
     "layerName": "eelgrassDissolvedClipped",
     "classKeys": [],
@@ -45,7 +52,9 @@
   {
     "datasourceId": "kelp",
     "geo_type": "vector",
-    "formats": ["fgb"],
+    "formats": [
+      "fgb"
+    ],
     "precalc": true,
     "layerName": "kelpForestDissolvedClipped",
     "classKeys": [],
@@ -58,7 +67,9 @@
   {
     "datasourceId": "bioclasticSand",
     "geo_type": "vector",
-    "formats": ["fgb"],
+    "formats": [
+      "fgb"
+    ],
     "precalc": true,
     "layerName": "bioclasticSandDissolvedClipped",
     "classKeys": [],
@@ -71,7 +82,9 @@
   {
     "datasourceId": "ous_recRodAndLine",
     "geo_type": "raster",
-    "formats": ["tif"],
+    "formats": [
+      "tif"
+    ],
     "precalc": true,
     "measurementType": "quantitative",
     "band": 1,
@@ -83,7 +96,9 @@
   {
     "datasourceId": "ous_recPassiveGear",
     "geo_type": "raster",
-    "formats": ["tif"],
+    "formats": [
+      "tif"
+    ],
     "precalc": true,
     "measurementType": "quantitative",
     "band": 1,
@@ -95,7 +110,9 @@
   {
     "datasourceId": "ous_comTrawling",
     "geo_type": "raster",
-    "formats": ["tif"],
+    "formats": [
+      "tif"
+    ],
     "precalc": true,
     "measurementType": "quantitative",
     "band": 1,
@@ -107,7 +124,9 @@
   {
     "datasourceId": "ous_comNonTrawling",
     "geo_type": "raster",
-    "formats": ["tif"],
+    "formats": [
+      "tif"
+    ],
     "precalc": true,
     "measurementType": "quantitative",
     "band": 1,
@@ -119,7 +138,9 @@
   {
     "datasourceId": "ous_divingNonHarvesting",
     "geo_type": "raster",
-    "formats": ["tif"],
+    "formats": [
+      "tif"
+    ],
     "precalc": true,
     "measurementType": "quantitative",
     "band": 1,
@@ -131,7 +152,9 @@
   {
     "datasourceId": "ous_divingHarvesting",
     "geo_type": "raster",
-    "formats": ["tif"],
+    "formats": [
+      "tif"
+    ],
     "precalc": true,
     "measurementType": "quantitative",
     "band": 1,
@@ -143,7 +166,9 @@
   {
     "datasourceId": "cod_spawning_grounds",
     "geo_type": "vector",
-    "formats": ["fgb"],
+    "formats": [
+      "fgb"
+    ],
     "precalc": true,
     "layerName": "Gytefelt_torsk_MB",
     "classKeys": [],
@@ -154,15 +179,137 @@
     "explodeMulti": true
   },
   {
-    "src": "data/src/Reports/Depth/gebco2024.tif",
-    "band": 1,
-    "geo_type": "raster",
     "datasourceId": "depth",
-    "formats": ["tif"],
+    "geo_type": "raster",
+    "formats": [
+      "tif"
+    ],
+    "precalc": true,
+    "measurementType": "quantitative",
+    "band": 1,
+    "noDataValue": -32767,
     "created": "2025-06-05T09:33:52.661Z",
     "lastUpdated": "2025-06-05T09:33:52.661Z",
-    "noDataValue": -32767,
-    "measurementType": "quantitative",
+    "src": "data/src/Reports/Depth/gebco2024.tif"
+  },
+  {
+    "datasourceId": "makrellterne",
+    "geo_type": "vector",
+    "formats": [
+      "fgb"
+    ],
+    "precalc": true,
+    "layerName": "makrellterne_buffer",
+    "classKeys": [],
+    "created": "2025-07-04T02:29:37.678Z",
+    "lastUpdated": "2025-07-04T02:29:37.678Z",
+    "src": "data/src/Reports/SeabirdNestingAreas/makrellterne_buffer.fgb",
+    "propertiesToKeep": [],
+    "explodeMulti": true
+  },
+  {
+    "datasourceId": "hettemaake",
+    "geo_type": "vector",
+    "formats": [
+      "fgb"
+    ],
+    "precalc": true,
+    "layerName": "hettemaake_buffer",
+    "classKeys": [],
+    "created": "2025-07-04T02:39:36.188Z",
+    "lastUpdated": "2025-07-04T02:39:36.188Z",
+    "src": "data/src/Reports/SeabirdNestingAreas/hettemaake_buffer.fgb",
+    "propertiesToKeep": [],
+    "explodeMulti": true
+  },
+  {
+    "datasourceId": "graamaake",
+    "geo_type": "vector",
+    "formats": [
+      "fgb"
+    ],
+    "precalc": true,
+    "layerName": "graamaake_buffer",
+    "classKeys": [],
+    "created": "2025-07-04T02:41:18.021Z",
+    "lastUpdated": "2025-07-04T02:41:18.021Z",
+    "src": "data/src/Reports/SeabirdNestingAreas/graamaake_buffer.fgb",
+    "propertiesToKeep": [],
+    "explodeMulti": true
+  },
+  {
+    "datasourceId": "fiskemaake",
+    "geo_type": "vector",
+    "formats": [
+      "fgb"
+    ],
+    "precalc": true,
+    "layerName": "fiskemaake_buffer",
+    "classKeys": [],
+    "created": "2025-07-04T02:41:37.545Z",
+    "lastUpdated": "2025-07-04T02:41:37.545Z",
+    "src": "data/src/Reports/SeabirdNestingAreas/fiskemaake_buffer.fgb",
+    "propertiesToKeep": [],
+    "explodeMulti": true
+  },
+  {
+    "datasourceId": "storskarv",
+    "geo_type": "vector",
+    "formats": [
+      "fgb"
+    ],
+    "precalc": true,
+    "layerName": "storskarv_buffer",
+    "classKeys": [],
+    "created": "2025-07-04T02:41:52.671Z",
+    "lastUpdated": "2025-07-04T02:41:52.671Z",
+    "src": "data/src/Reports/SeabirdNestingAreas/storskarv_buffer.fgb",
+    "propertiesToKeep": [],
+    "explodeMulti": true
+  },
+  {
+    "datasourceId": "svartbak",
+    "geo_type": "vector",
+    "formats": [
+      "fgb"
+    ],
+    "precalc": true,
+    "layerName": "svartbak_buffer",
+    "classKeys": [],
+    "created": "2025-07-04T02:42:04.543Z",
+    "lastUpdated": "2025-07-04T02:42:04.543Z",
+    "src": "data/src/Reports/SeabirdNestingAreas/svartbak_buffer.fgb",
+    "propertiesToKeep": [],
+    "explodeMulti": true
+  },
+  {
+    "datasourceId": "tjeld",
+    "geo_type": "vector",
+    "formats": [
+      "fgb"
+    ],
+    "precalc": true,
+    "layerName": "tjeld_buffer",
+    "classKeys": [],
+    "created": "2025-07-04T02:42:16.113Z",
+    "lastUpdated": "2025-07-04T02:42:16.113Z",
+    "src": "data/src/Reports/SeabirdNestingAreas/tjeld_buffer.fgb",
+    "propertiesToKeep": [],
+    "explodeMulti": true
+  },
+  {
+    "src": "data/src/Reports/SeabirdNestingAreas/aerfugl_buffer.fgb",
+    "layerName": "aerfugl_buffer",
+    "geo_type": "vector",
+    "datasourceId": "aerfugl",
+    "formats": [
+      "fgb"
+    ],
+    "classKeys": [],
+    "created": "2025-07-04T02:42:33.369Z",
+    "lastUpdated": "2025-07-04T02:42:33.369Z",
+    "propertiesToKeep": [],
+    "explodeMulti": true,
     "precalc": true
   }
 ]

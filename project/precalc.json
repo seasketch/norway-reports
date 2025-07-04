@@ -2,6 +2,14 @@
   {
     "geographyId": "planningArea",
     "metricId": "area",
+    "classId": "aerfugl-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 37303047.003364
+  },
+  {
+    "geographyId": "planningArea",
+    "metricId": "area",
     "classId": "bioclasticSand-total",
     "sketchId": null,
     "groupId": null,
@@ -26,10 +34,42 @@
   {
     "geographyId": "planningArea",
     "metricId": "area",
+    "classId": "fiskemaake-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 95467877.67881194
+  },
+  {
+    "geographyId": "planningArea",
+    "metricId": "area",
+    "classId": "graamaake-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 186695667.27394044
+  },
+  {
+    "geographyId": "planningArea",
+    "metricId": "area",
+    "classId": "hettemaake-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 14236885.512783177
+  },
+  {
+    "geographyId": "planningArea",
+    "metricId": "area",
     "classId": "kelp-total",
     "sketchId": null,
     "groupId": null,
     "value": 17486290.02203619
+  },
+  {
+    "geographyId": "planningArea",
+    "metricId": "area",
+    "classId": "makrellterne-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 42004688.62266104
   },
   {
     "geographyId": "planningArea",
@@ -89,6 +129,38 @@
   },
   {
     "geographyId": "planningArea",
+    "metricId": "area",
+    "classId": "storskarv-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 77979972.65620334
+  },
+  {
+    "geographyId": "planningArea",
+    "metricId": "area",
+    "classId": "svartbak-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 95986938.03517069
+  },
+  {
+    "geographyId": "planningArea",
+    "metricId": "area",
+    "classId": "tjeld-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 5299712.834420117
+  },
+  {
+    "geographyId": "planningArea",
+    "metricId": "count",
+    "classId": "aerfugl-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 408
+  },
+  {
+    "geographyId": "planningArea",
     "metricId": "count",
     "classId": "bioclasticSand-total",
     "sketchId": null,
@@ -114,10 +186,42 @@
   {
     "geographyId": "planningArea",
     "metricId": "count",
+    "classId": "fiskemaake-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 1092
+  },
+  {
+    "geographyId": "planningArea",
+    "metricId": "count",
+    "classId": "graamaake-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 2316
+  },
+  {
+    "geographyId": "planningArea",
+    "metricId": "count",
+    "classId": "hettemaake-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 166
+  },
+  {
+    "geographyId": "planningArea",
+    "metricId": "count",
     "classId": "kelp-total",
     "sketchId": null,
     "groupId": null,
     "value": 203
+  },
+  {
+    "geographyId": "planningArea",
+    "metricId": "count",
+    "classId": "makrellterne-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 479
   },
   {
     "geographyId": "planningArea",
@@ -174,6 +278,30 @@
     "sketchId": null,
     "groupId": null,
     "value": 1
+  },
+  {
+    "geographyId": "planningArea",
+    "metricId": "count",
+    "classId": "storskarv-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 806
+  },
+  {
+    "geographyId": "planningArea",
+    "metricId": "count",
+    "classId": "svartbak-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 965
+  },
+  {
+    "geographyId": "planningArea",
+    "metricId": "count",
+    "classId": "tjeld-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 61
   },
   {
     "geographyId": "planningArea",

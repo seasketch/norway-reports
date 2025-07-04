@@ -1,0 +1,92 @@
+{
+  "metrics": [
+    {
+      "geographyId": null,
+      "metricId": "seabirdNests",
+      "classId": "aerfugl",
+      "sketchId": "102341",
+      "groupId": null,
+      "value": 1,
+      "extra": {
+        "sketchName": "corner"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "seabirdNests",
+      "classId": "fiskemaake",
+      "sketchId": "102341",
+      "groupId": null,
+      "value": 7,
+      "extra": {
+        "sketchName": "corner"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "seabirdNests",
+      "classId": "graamaake",
+      "sketchId": "102341",
+      "groupId": null,
+      "value": 4,
+      "extra": {
+        "sketchName": "corner"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "seabirdNests",
+      "classId": "hettemaake",
+      "sketchId": "102341",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "corner"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "seabirdNests",
+      "classId": "makrellterne",
+      "sketchId": "102341",
+      "groupId": null,
+      "value": 1,
+      "extra": {
+        "sketchName": "corner"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "seabirdNests",
+      "classId": "storskarv",
+      "sketchId": "102341",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "corner"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "seabirdNests",
+      "classId": "svartbak",
+      "sketchId": "102341",
+      "groupId": null,
+      "value": 7,
+      "extra": {
+        "sketchName": "corner"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "seabirdNests",
+      "classId": "tjeld",
+      "sketchId": "102341",
+      "groupId": null,
+      "value": 1,
+      "extra": {
+        "sketchName": "corner"
+      }
+    }
+  ]
+}

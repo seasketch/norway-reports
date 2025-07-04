@@ -112,5 +112,59 @@
         "layerId": "Y1qY5FyUq"
       }
     ]
+  },
+  {
+    "metricId": "seabirdNests",
+    "type": "countOverlap",
+    "classes": [
+      {
+        "classId": "makrellterne",
+        "display": "Common tern",
+        "datasourceId": "makrellterne",
+        "layerId": "FU03eLGgk"
+      },
+      {
+        "classId": "hettemaake",
+        "display": "Black-headed gull",
+        "datasourceId": "hettemaake",
+        "layerId": "MBQRM2Uh8"
+      },
+      {
+        "classId": "graamaake",
+        "display": "European herring gull",
+        "datasourceId": "graamaake",
+        "layerId": "z94tkKp76"
+      },
+      {
+        "classId": "fiskemaake",
+        "display": "Common gull",
+        "datasourceId": "fiskemaake",
+        "layerId": "yjV3IYySK"
+      },
+      {
+        "classId": "storskarv",
+        "display": "Great cormorant",
+        "datasourceId": "storskarv",
+        "layerId": "WkfRXvwPc"
+      },
+      {
+        "classId": "svartbak",
+        "display": "Great black-backed gull",
+        "datasourceId": "svartbak",
+        "layerId": "sFnSzgyUw"
+      },
+      {
+        "classId": "tjeld",
+        "display": "Eurasian oystercatcher",
+        "datasourceId": "tjeld",
+        "layerId": "ttB24nBJ0"
+      },
+      {
+        "classId": "aerfugl",
+        "display": "Common eider",
+        "datasourceId": "aerfugl",
+        "layerId": "zxdvcGS0q"
+      }
+    ]
   }
 ]

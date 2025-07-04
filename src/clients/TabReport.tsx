@@ -13,6 +13,7 @@ import { BioclasticSand } from "../components/BioclasticSand.js";
 import { Ous } from "../components/Ous.js";
 import { CodSpawningGrounds } from "../components/CodSpawningGrounds.js";
 import { Depth } from "../components/Depth.js";
+import { SeabirdNests } from "../components/SeabirdNests.js";
 
 const enableAllTabs = false;
 const BaseReport = () => {
@@ -43,6 +44,7 @@ const BaseReport = () => {
         <Kelp />
         <BioclasticSand />
         <CodSpawningGrounds />
+        <SeabirdNests />
       </ReportPage>
     </>
   );
