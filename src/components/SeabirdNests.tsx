@@ -1,11 +1,14 @@
 import React from "react";
 import { Trans, useTranslation } from "react-i18next";
 import {
-  ClassTable,
   Collapse,
+  Column,
+  LayerToggle,
   ReportError,
+  ReportTableStyled,
   ResultsCard,
   SketchClassTable,
+  Table,
   useSketchProperties,
 } from "@seasketch/geoprocessing/client-ui";
 import {
@@ -19,6 +22,49 @@ import {
   toPercentMetric,
 } from "@seasketch/geoprocessing/client-core";
 import project from "../../project/projectClient.js";
+import { styled } from "styled-components";
+
+// ClassId -> scientific name
+const scientificNames: Record<string, string> = {
+  makrellterne: "Sterna hirundo",
+  hettemaake: "Chroicocephalus ridibundus",
+  graamaake: "Larus argentatus",
+  fiskemaake: "Larus canus",
+  storskarv: "Phalacrocorax carbo",
+  svartbak: "Larus marinus",
+  tjeld: "Haematopus ostralegus",
+  aerfugl: "Somateria mollissima",
+};
+
+// ClassId -> Redlist status
+const redListStatus: Record<string, string> = {
+  makrellterne: "EN",
+  hettemaake: "CR",
+  graamaake: "VU",
+  fiskemaake: "VU",
+  storskarv: "NT",
+  svartbak: "LC",
+  tjeld: "NT",
+  aerfugl: "VU",
+};
+
+// Function to get color for red list status
+const getStatusColor = (status: string): string => {
+  switch (status) {
+    case "CR":
+      return "#DB1C06";
+    case "EN":
+      return "#FC7F3F";
+    case "VU":
+      return "#F9E814";
+    case "NT":
+      return "#CCE225";
+    case "LC":
+      return "#60C659";
+    default:
+      return "#757575";
+  }
+};
 
 /**
  * Seabird Nests component
@@ -61,16 +107,8 @@ export const SeabirdNests: React.FunctionComponent<GeogProp> = (props) => {
         const percentMetrics = toPercentMetric(valueMetrics, precalcMetrics, {
           metricIdOverride: percMetricIdName,
         });
-        const metrics = [...valueMetrics, ...percentMetrics];
 
-        const objectives = (() => {
-          const objectives = project.getMetricGroupObjectives(metricGroup, t);
-          if (objectives.length) {
-            return objectives;
-          } else {
-            return;
-          }
-        })();
+        const metrics = [...valueMetrics, ...percentMetrics];
 
         return (
           <ReportError>
@@ -81,44 +119,18 @@ export const SeabirdNests: React.FunctionComponent<GeogProp> = (props) => {
               </Trans>
             </p>
 
-            <ClassTable
-              rows={metrics}
-              metricGroup={metricGroup}
-              objective={objectives}
-              columnConfig={[
-                {
-                  columnLabel: seabirdLabel,
-                  type: "class",
-                  width: 40,
-                },
-                {
-                  columnLabel: withinLabel,
-                  type: "metricValue",
-                  metricId: metricGroup.metricId,
-                  valueFormatter: "integer",
-                  chartOptions: {
-                    showTitle: true,
-                  },
-                  colStyle: { textAlign: "center" },
-                  width: 20,
-                },
-                {
-                  columnLabel: percWithinLabel,
-                  type: "metricChart",
-                  metricId: percMetricIdName,
-                  valueFormatter: "percent",
-                  chartOptions: {
-                    showTitle: true,
-                  },
-                  width: 40,
-                },
-                {
-                  columnLabel: mapLabel,
-                  type: "layerToggle",
-                  width: 10,
-                },
-              ]}
-            />
+            <SeabirdTableStyled>
+              <Table
+                columns={getSeabirdColumns(
+                  t,
+                  seabirdLabel,
+                  withinLabel,
+                  percWithinLabel,
+                  mapLabel,
+                )}
+                data={getSeabirdData(metrics, metricGroup, percMetricIdName)}
+              />
+            </SeabirdTableStyled>
 
             {isCollection && childProperties && (
               <Collapse title={t("Show by Sketch")}>
@@ -176,4 +188,137 @@ const genSketchTable = (
   return (
     <SketchClassTable rows={sketchRows} metricGroup={metricGroup} formatPerc />
   );
+};
+
+const SeabirdTableStyled = styled(ReportTableStyled)`
+  & {
+    width: 100%;
+    overflow-x: scroll;
+    font-size: 11px;
+  }
+
+  th,
+  tr,
+  td {
+    text-align: center;
+    padding: 6px 4px;
+  }
+
+  th {
+    font-size: 10px;
+    font-weight: bold;
+  }
+
+  /* Column width controls */
+  th:nth-child(1),
+  td:nth-child(1) {
+    width: 120px;
+    min-width: 120px;
+    max-width: 120px;
+    text-align: left;
+  }
+
+  th:nth-child(2),
+  td:nth-child(2) {
+    width: 80px;
+    min-width: 80px;
+    max-width: 80px;
+  }
+
+  th:nth-child(4),
+  td:nth-child(4) {
+    width: 30px;
+    min-width: 30px;
+    max-width: 30px;
+  }
+
+  th:nth-child(5),
+  td:nth-child(5) {
+    width: 40px;
+    min-width: 40px;
+    max-width: 40px;
+  }
+
+  th:nth-child(6),
+  td:nth-child(6) {
+    width: 60px;
+    min-width: 60px;
+    max-width: 60px;
+  }
+`;
+
+const getSeabirdColumns = (
+  t: any,
+  seabirdLabel: string,
+  withinLabel: string,
+  percWithinLabel: string,
+  mapLabel: string,
+): Column<any>[] => [
+  {
+    Header: seabirdLabel,
+    accessor: (row: any) => row.display,
+  },
+  {
+    Header: t("Scientific Name"),
+    accessor: (row: any) => <i>{row.scientificName}</i>,
+  },
+  {
+    Header: t("Status"),
+    accessor: (row: any) => (
+      <span
+        style={{
+          padding: "2px 6px",
+          borderRadius: "3px",
+          fontSize: "0.75em",
+          fontWeight: "bold",
+          backgroundColor: getStatusColor(row.redListStatus),
+          color: "black",
+        }}
+      >
+        {row.redListStatus}
+      </span>
+    ),
+  },
+  {
+    Header: withinLabel,
+    accessor: (row: any) => row.nestCount,
+  },
+  {
+    Header: percWithinLabel,
+    accessor: (row: any) => row.percentage,
+  },
+  {
+    Header: mapLabel,
+    accessor: (row: any) => (
+      <LayerToggle layerId={row.layerId} simple size="small" />
+    ),
+  },
+];
+
+const getSeabirdData = (
+  metrics: Metric[],
+  metricGroup: MetricGroup,
+  percMetricIdName: string,
+) => {
+  return metricGroup.classes.map((classItem) => {
+    const classMetrics = metrics.filter((m) => m.classId === classItem.classId);
+    const valueMetric = classMetrics.find(
+      (m) => m.metricId === metricGroup.metricId,
+    );
+    const percentMetric = classMetrics.find(
+      (m) => m.metricId === percMetricIdName,
+    );
+
+    return {
+      classId: classItem.classId,
+      display: classItem.display,
+      scientificName: scientificNames[classItem.classId] || "",
+      redListStatus: redListStatus[classItem.classId] || "",
+      nestCount: valueMetric ? valueMetric.value.toLocaleString() : "0",
+      percentage: percentMetric
+        ? `${(percentMetric.value * 100).toFixed(1)}%`
+        : "0%",
+      layerId: classItem.layerId,
+    };
+  });
 };
