@@ -48,7 +48,7 @@ const redListStatus: Record<string, string> = {
   aerfugl: "VU",
 };
 
-// Function to get color for red list status
+// Get color for red list status
 const getStatusColor = (status: string): string => {
   switch (status) {
     case "CR":
@@ -92,11 +92,7 @@ export const SeabirdNests: React.FunctionComponent<GeogProp> = (props) => {
   const percWithinLabel = t("% of Total Nests");
 
   return (
-    <ResultsCard
-      title={titleLabel}
-      functionName="seabirdNests"
-      extraParams={{ geographyIds: [curGeography.geographyId] }}
-    >
+    <ResultsCard title={titleLabel} functionName="seabirdNests">
       {(data: ReportResult) => {
         const percMetricIdName = `${metricGroup.metricId}Perc`;
 
@@ -112,13 +108,6 @@ export const SeabirdNests: React.FunctionComponent<GeogProp> = (props) => {
 
         return (
           <ReportError>
-            <p>
-              <Trans i18nKey="SeabirdNests 1">
-                This report summarizes the number and percentage of seabird
-                nests adjacent to the plan.
-              </Trans>
-            </p>
-
             <SeabirdTableStyled>
               <Table
                 columns={getSeabirdColumns(
@@ -145,14 +134,11 @@ export const SeabirdNests: React.FunctionComponent<GeogProp> = (props) => {
 
             <Collapse title={t("Learn More")}>
               <Trans i18nKey="SeabirdNests - learn more">
-                <p>ℹ️ Overview: </p>
-                <p>🗺️ Source Data:</p>
                 <p>
                   📈 Report: This report calculates the total number of nests
-                  adjacent to the plan (within 200m). This value is divided by
-                  the total number of nests to obtain the % adjacent to the
-                  plan. If the plan includes multiple areas that overlap, the
-                  overlap is only counted once.
+                  adjacent to the selected MPA(s) (within 200m). This value is
+                  divided by the total number of nests to obtain the % adjacent
+                  to the selected MPA(s).
                 </p>
               </Trans>
             </Collapse>

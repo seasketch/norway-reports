@@ -67,28 +67,11 @@ export const CodSpawningGrounds: React.FunctionComponent<GeogProp> = (
         });
         const metrics = [...valueMetrics, ...percentMetrics];
 
-        const objectives = (() => {
-          const objectives = project.getMetricGroupObjectives(metricGroup, t);
-          if (objectives.length) {
-            return objectives;
-          } else {
-            return;
-          }
-        })();
-
         return (
           <ReportError>
-            <p>
-              <Trans i18nKey="CodSpawningGrounds 1">
-                This report summarizes this area of cod spawning grounds
-                contained within this plan.
-              </Trans>
-            </p>
-
             <ClassTable
               rows={metrics}
               metricGroup={metricGroup}
-              objective={objectives}
               columnConfig={[
                 {
                   columnLabel: " ",
@@ -163,10 +146,10 @@ export const CodSpawningGrounds: React.FunctionComponent<GeogProp> = (
                 </p>
                 <p>
                   📈 Report: This report calculates the total area of cod
-                  spawning grounds within the plan. This area is divided by the
-                  total area cod spawning grounds within the planning area to
-                  obtain the % contained within the plan. If the plan includes
-                  multiple areas that overlap, the overlap is only counted once.
+                  spawning grounds within the selected MPA(s). This area is
+                  divided by the total area cod spawning grounds within the
+                  planning area to obtain the % contained within the selected
+                  MPA(s).
                 </p>
               </Trans>
             </Collapse>

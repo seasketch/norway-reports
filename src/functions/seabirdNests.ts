@@ -4,43 +4,54 @@ import {
   Polygon,
   MultiPolygon,
   GeoprocessingHandler,
-  getFirstFromParam,
-  DefaultExtraParams,
   Feature,
   isVectorDatasource,
-  overlapFeatures,
-  getFeaturesForSketchBBoxes,
-  overlapPolygonSum,
-  loadCog,
   loadFgb,
 } from "@seasketch/geoprocessing";
 import project from "../../project/projectClient.js";
 import {
   Metric,
+  Point,
   ReportResult,
+  isSketchCollection,
   rekeyMetrics,
   sortMetrics,
 } from "@seasketch/geoprocessing/client-core";
-import { bbox } from "@turf/turf";
+import { bbox, buffer } from "@turf/turf";
+import { overlapPoint } from "../util/overlapPoint.js";
 
 /**
- * seabirdNests: A geoprocessing function that calculates overlap metrics for vector datasources
- * @param sketch - A sketch or collection of sketches
- * @param extraParams
- * @returns Calculated metrics and a null sketch
+ * Overlap with adjacent seabird nests
  */
 export async function seabirdNests(
   sketch:
     | Sketch<Polygon | MultiPolygon>
     | SketchCollection<Polygon | MultiPolygon>,
 ): Promise<ReportResult> {
-  const featuresByDatasource: Record<
-    string,
-    Feature<Polygon | MultiPolygon>[]
-  > = {};
-
-  // Calculate overlap metrics for each class in metric group
   const metricGroup = project.getMetricGroup("seabirdNests");
+
+  // buffer sketch 200m
+  const bufferedSketch = (() => {
+    if (isSketchCollection(sketch)) {
+      return {
+        ...sketch,
+        features: sketch.features.map((feat) => ({
+          ...feat,
+          geometry: buffer(feat.geometry as Polygon | MultiPolygon, 200, {
+            units: "meters",
+          })!.geometry,
+        })),
+      };
+    } else {
+      return {
+        ...sketch,
+        geometry: buffer(sketch.geometry! as Polygon | MultiPolygon, 200, {
+          units: "meters",
+        })!.geometry,
+      };
+    }
+  })();
+
   const metrics = (
     await Promise.all(
       metricGroup.classes.map(async (curClass) => {
@@ -51,45 +62,17 @@ export async function seabirdNests(
           throw new Error(`Expected vector datasource for ${ds.datasourceId}`);
         const url = project.getDatasourceUrl(ds);
 
-        // Fetch features overlapping with sketch, if not already fetched
-        const features =
-          featuresByDatasource[ds.datasourceId] ||
-          (await loadFgb(url, sketch.bbox || bbox(sketch)));
-        console.log(sketch.properties.name, curClass.classId, features.length);
-        featuresByDatasource[ds.datasourceId] = features;
-
-        // Get classKey for current data class
-        const classKey = project.getMetricGroupClassKey(metricGroup, {
-          classId: curClass.classId,
-        });
-
-        let finalFeatures: Feature<Polygon | MultiPolygon>[] = [];
-        if (classKey === undefined)
-          // Use all features
-          finalFeatures = features;
-        else {
-          // Filter to features that are a member of this class
-          finalFeatures = features.filter(
-            (feat) =>
-              feat.geometry &&
-              feat.properties &&
-              feat.properties[classKey] === curClass.classId,
-          );
-        }
-        console.log(
-          sketch.properties.name,
-          curClass.classId,
-          finalFeatures.length,
+        const features = await loadFgb<Feature<Point>>(
+          url,
+          bbox(bufferedSketch, { recompute: true }),
         );
 
         // Calculate overlap metrics
-        const overlapResult = await overlapPolygonSum(
+        const overlapResult = await overlapPoint(
           metricGroup.metricId,
-          finalFeatures,
-          sketch,
+          features,
+          bufferedSketch,
         );
-
-        console.log(sketch.properties.name, curClass.classId, overlapResult);
 
         return overlapResult.map(
           (metric): Metric => ({

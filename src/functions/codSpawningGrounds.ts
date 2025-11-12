@@ -17,10 +17,7 @@ import {
 } from "@seasketch/geoprocessing/client-core";
 
 /**
- * codSpawningGrounds: A geoprocessing function that calculates overlap metrics for vector datasources
- * @param sketch - A sketch or collection of sketches
- * @param extraParams
- * @returns Calculated metrics and a null sketch
+ * Overlap with cod spawning grounds
  */
 export async function codSpawningGrounds(
   sketch:
@@ -29,37 +26,33 @@ export async function codSpawningGrounds(
 ): Promise<ReportResult> {
   // Calculate overlap metrics for each class in metric group
   const metricGroup = project.getMetricGroup("codSpawningGrounds");
-  const metrics = (
-    await Promise.all(
-      metricGroup.classes.map(async (curClass) => {
-        const ds = project.getMetricGroupDatasource(metricGroup, {
-          classId: curClass.classId,
-        });
-        if (!isVectorDatasource(ds))
-          throw new Error(`Expected vector datasource for ${ds.datasourceId}`);
-        const url = project.getDatasourceUrl(ds);
+  const classId = metricGroup.classes[0].classId;
+  const ds = project.getMetricGroupDatasource(metricGroup, {
+    classId,
+  });
+  if (!isVectorDatasource(ds))
+    throw new Error(`Expected vector datasource for ${ds.datasourceId}`);
+  const url = project.getDatasourceUrl(ds);
 
-        // Fetch features overlapping with sketch, if not already fetched
-        const features = await getFeaturesForSketchBBoxes<
-          Polygon | MultiPolygon
-        >(sketch, url);
+  // Fetch features overlapping with sketch, if not already fetched
+  const features = await getFeaturesForSketchBBoxes<Polygon | MultiPolygon>(
+    sketch,
+    url,
+  );
 
-        // Calculate overlap metrics
-        const overlapResult = await overlapPolygonArea(
-          metricGroup.metricId,
-          features,
-          sketch,
-        );
+  // Calculate overlap metrics
+  const overlapResult = await overlapPolygonArea(
+    metricGroup.metricId,
+    features,
+    sketch,
+  );
 
-        return overlapResult.map(
-          (metric): Metric => ({
-            ...metric,
-            classId: curClass.classId,
-          }),
-        );
-      }),
-    )
-  ).flat();
+  const metrics = overlapResult.map(
+    (metric): Metric => ({
+      ...metric,
+      classId,
+    }),
+  );
 
   return {
     metrics: sortMetrics(rekeyMetrics(metrics)),

@@ -17,10 +17,7 @@ import {
 } from "@seasketch/geoprocessing/client-core";
 
 /**
- * eelgrass: A geoprocessing function that calculates overlap metrics for vector datasources
- * @param sketch - A sketch or collection of sketches
- * @param extraParams
- * @returns Calculated metrics and a null sketch
+ * Overlap with eelgrass
  */
 export async function eelgrass(
   sketch:
@@ -29,9 +26,9 @@ export async function eelgrass(
 ): Promise<ReportResult> {
   // Calculate overlap metrics for each class in metric group
   const metricGroup = project.getMetricGroup("eelgrass");
-  const curClass = metricGroup.classes[0];
+  const classId = metricGroup.classes[0].classId;
   const ds = project.getMetricGroupDatasource(metricGroup, {
-    classId: curClass.classId,
+    classId,
   });
   if (!isVectorDatasource(ds))
     throw new Error(`Expected vector datasource for ${ds.datasourceId}`);
@@ -53,7 +50,7 @@ export async function eelgrass(
   const metrics = overlapResult.map(
     (metric): Metric => ({
       ...metric,
-      classId: curClass.classId,
+      classId,
     }),
   );
 

@@ -23,10 +23,7 @@ import {
 import project from "../../project/projectClient.js";
 
 /**
- * BioclasticSand component
- *
- * @param props - geographyId
- * @returns A react component which displays an overlap report
+ * Bioclastic Sand component
  */
 export const BioclasticSand: React.FunctionComponent<GeogProp> = (props) => {
   const { t } = useTranslation();
@@ -51,11 +48,7 @@ export const BioclasticSand: React.FunctionComponent<GeogProp> = (props) => {
   const unitsLabel = t("km²");
 
   return (
-    <ResultsCard
-      title={titleLabel}
-      functionName="bioclasticSand"
-      extraParams={{ geographyIds: [curGeography.geographyId] }}
-    >
+    <ResultsCard title={titleLabel} functionName="bioclasticSand">
       {(data: ReportResult) => {
         const percMetricIdName = `${metricGroup.metricId}Perc`;
 
@@ -68,28 +61,11 @@ export const BioclasticSand: React.FunctionComponent<GeogProp> = (props) => {
         });
         const metrics = [...valueMetrics, ...percentMetrics];
 
-        const objectives = (() => {
-          const objectives = project.getMetricGroupObjectives(metricGroup, t);
-          if (objectives.length) {
-            return objectives;
-          } else {
-            return;
-          }
-        })();
-
         return (
           <ReportError>
-            <p>
-              <Trans i18nKey="BioclasticSand 1">
-                This report summarizes this amount of bioclastic sand within the
-                plan.
-              </Trans>
-            </p>
-
             <ClassTable
               rows={metrics}
               metricGroup={metricGroup}
-              objective={objectives}
               columnConfig={[
                 {
                   columnLabel: " ",
@@ -146,8 +122,9 @@ export const BioclasticSand: React.FunctionComponent<GeogProp> = (props) => {
                 <p>🗺️ Source Data: Marine naturtyper ettter DN-håndbok 19</p>
                 <p>
                   📈 Report: This report calculates the total area of bioclastic
-                  sand within the plan. This value is divided by the total area
-                  of bioclastic sand to obtain the % contained within the plan.
+                  sand within the selected MPA(s). This value is divided by the
+                  total area of bioclastic sand to obtain the % contained within
+                  the selected MPA(s).
                 </p>
               </Trans>
             </Collapse>

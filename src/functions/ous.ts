@@ -4,8 +4,6 @@ import {
   Polygon,
   MultiPolygon,
   GeoprocessingHandler,
-  getFirstFromParam,
-  DefaultExtraParams,
   rasterMetrics,
   isRasterDatasource,
   loadCog,
@@ -17,13 +15,9 @@ import {
   rekeyMetrics,
   sortMetrics,
 } from "@seasketch/geoprocessing/client-core";
-import { clipToGeography } from "../util/clipToGeography.js";
 
 /**
- * ous: A geoprocessing function that calculates overlap metrics for raster datasources
- * @param sketch - A sketch or collection of sketches
- * @param extraParams
- * @returns Calculated metrics and a null sketch
+ * Measures the percentage of ocean use value that overlaps with the sketch
  */
 export async function ous(
   sketch:
@@ -50,11 +44,7 @@ export async function ous(
         const overlapResult = await rasterMetrics(raster, {
           metricId: metricGroup.metricId,
           feature: sketch,
-          ...(ds.measurementType === "quantitative" && { stats: ["sum"] }),
-          ...(ds.measurementType === "categorical" && {
-            categorical: true,
-            categoryMetricValues: [curClass.classId],
-          }),
+          stats: ["sum"],
         });
 
         return overlapResult.map(

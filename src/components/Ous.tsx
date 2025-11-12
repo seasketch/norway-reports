@@ -44,11 +44,7 @@ export const Ous: React.FunctionComponent<GeogProp> = (props) => {
   const percWithinLabel = t("% Within Plan");
 
   return (
-    <ResultsCard
-      title={titleLabel}
-      functionName="ous"
-      extraParams={{ geographyIds: [curGeography.geographyId] }}
-    >
+    <ResultsCard title={titleLabel} functionName="ous">
       {(data: ReportResult) => {
         const percMetricIdName = `${metricGroup.metricId}Perc`;
 
@@ -61,35 +57,23 @@ export const Ous: React.FunctionComponent<GeogProp> = (props) => {
         });
         const metrics = [...valueMetrics, ...percentMetrics];
 
-        const objectives = (() => {
-          const objectives = project.getMetricGroupObjectives(metricGroup, t);
-          if (objectives.length) {
-            return objectives;
-          } else {
-            return;
-          }
-        })();
-
         return (
           <ReportError>
             <p>
               <Trans i18nKey="Ous 1">
-                This report summarizes the percentage of ocean use value that
-                overlaps with this plan, as reported in the Ocean Use Survey.
-                Plans should consider the potential impact to sectors if access
-                or activities are restricted.
+                This report summarizes overlap with ocean use value, based on
+                results from the Raet National Park Ocean Use Survey.
               </Trans>
             </p>
 
             <ClassTable
               rows={metrics}
               metricGroup={metricGroup}
-              objective={objectives}
               columnConfig={[
                 {
                   columnLabel: " ",
                   type: "class",
-                  width: 50,
+                  width: 55,
                 },
                 {
                   columnLabel: percWithinLabel,
@@ -99,7 +83,7 @@ export const Ous: React.FunctionComponent<GeogProp> = (props) => {
                   chartOptions: {
                     showTitle: true,
                   },
-                  width: 40,
+                  width: 35,
                 },
                 {
                   columnLabel: mapLabel,
@@ -124,11 +108,10 @@ export const Ous: React.FunctionComponent<GeogProp> = (props) => {
               <Trans i18nKey="Ous - learn more">
                 <p>🗺️ Source Data: Ocean Use Survey</p>
                 <p>
-                  📈 Report: This report calculates the total value of each
-                  feature within the plan. This value is divided by the total
-                  value of each feature to obtain the % contained within the
-                  plan. If the plan includes multiple areas that overlap, the
-                  overlap is only counted once.
+                  📈 Report: This report calculates the total ocean use value of
+                  each sector within the selected MPA(s). This value is divided
+                  by the total value of each ocean use sector to obtain the %
+                  contained within the selected MPA(s).
                 </p>
               </Trans>
             </Collapse>

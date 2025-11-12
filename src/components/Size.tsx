@@ -103,13 +103,6 @@ export const Size: React.FunctionComponent<GeogProp> = (props) => {
 
         return (
           <ReportError>
-            <p>
-              <Trans i18nKey="Size - description">
-                This report summarizes this plan's overlap with the planning
-                area of Raet NP, measuring progress towards achieving the
-                objective of 30% protection.
-              </Trans>
-            </p>
             <KeySection>
               {t("This plan is")}{" "}
               <b>
@@ -195,10 +188,10 @@ export const Size: React.FunctionComponent<GeogProp> = (props) => {
                   MPAs.
                 </p>
                 <p>
-                  📈 Report: This report calculates the total area of the plan
-                  within the planning area. This value is divided by the total
-                  area of the planning area to obtain the % contained within the
-                  plan.
+                  📈 Report: This report calculates the total area within the
+                  selected MPA(s). This value is divided by the total area of
+                  the planning area to obtain the % contained within the
+                  selected MPA(s).
                 </p>
               </Trans>
             </Collapse>

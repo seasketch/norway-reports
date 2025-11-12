@@ -2,7 +2,6 @@ import {
   PreprocessingHandler,
   Feature,
   Sketch,
-  ensureValidPolygon,
   Polygon,
   MultiPolygon,
   loadFgb,
@@ -24,14 +23,6 @@ export async function clipToOceanEez(
   if (!isPolygonFeature(feature)) {
     throw new ValidationError("Input must be a polygon");
   }
-
-  // throws if not valid with specific message
-  ensureValidPolygon(feature, {
-    minSize: 1,
-    enforceMinSize: false,
-    maxSize: 500_000 * 1000 ** 2, // Default 500,000 KM
-    enforceMaxSize: false,
-  });
 
   const featureBox = bbox(feature);
   const url = `${projectClient.dataBucketUrl()}planningArea.fgb`;
@@ -55,7 +46,7 @@ export async function clipToOceanEez(
   }
 
   if (!clipped || area(clipped) === 0) {
-    throw new ValidationError("Feature is outside of EEZ boundary");
+    throw new ValidationError("Feature is outside of planning area");
   }
 
   // Assume user wants the largest polygon if multiple remain
@@ -64,7 +55,7 @@ export async function clipToOceanEez(
 
 export default new PreprocessingHandler(clipToOceanEez, {
   title: "clipToOceanEez",
-  description: "Example-description",
+  description: "Clip to planning area",
   timeout: 40,
   requiresProperties: [],
   memory: 1024,

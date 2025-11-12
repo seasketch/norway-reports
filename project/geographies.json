@@ -1,12 +1,5 @@
 [
   {
-    "geographyId": "world",
-    "datasourceId": "world",
-    "display": "World",
-    "groups": [],
-    "precalc": false
-  },
-  {
     "geographyId": "planningArea",
     "datasourceId": "planningArea",
     "display": "Planning Area",

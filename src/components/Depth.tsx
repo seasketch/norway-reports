@@ -24,12 +24,9 @@ import {
 import project from "../../project/projectClient.js";
 
 /**
- * DepthClassesCard component
- *
- * @param props - geographyId
- * @returns A react component which displays an overlap report
+ * Depth component
  */
-export const DepthClassesCard: React.FunctionComponent<GeogProp> = (props) => {
+export const Depth: React.FunctionComponent<GeogProp> = (props) => {
   const { t } = useTranslation();
   const [{ isCollection, id, childProperties }] = useSketchProperties();
   const curGeography = project.getGeographyById(props.geographyId, {
@@ -52,12 +49,7 @@ export const DepthClassesCard: React.FunctionComponent<GeogProp> = (props) => {
   const unitsLabel = t("km²");
 
   return (
-    <ResultsCard
-      title={titleLabel}
-      functionName="depthClasses"
-      extraParams={{ geographyIds: [curGeography.geographyId] }}
-      useChildCard
-    >
+    <ResultsCard title={titleLabel} functionName="depthClasses" useChildCard>
       {(data: ReportResult) => {
         const percMetricIdName = `${metricGroup.metricId}Perc`;
 
@@ -69,15 +61,6 @@ export const DepthClassesCard: React.FunctionComponent<GeogProp> = (props) => {
           metricIdOverride: percMetricIdName,
         });
         const metrics = [...valueMetrics, ...percentMetrics];
-
-        const objectives = (() => {
-          const objectives = project.getMetricGroupObjectives(metricGroup, t);
-          if (objectives.length) {
-            return objectives;
-          } else {
-            return;
-          }
-        })();
 
         return (
           <ReportError>
@@ -94,7 +77,6 @@ export const DepthClassesCard: React.FunctionComponent<GeogProp> = (props) => {
               <ClassTable
                 rows={metrics}
                 metricGroup={metricGroup}
-                objective={objectives}
                 columnConfig={[
                   {
                     columnLabel: titleLabel,
@@ -105,12 +87,7 @@ export const DepthClassesCard: React.FunctionComponent<GeogProp> = (props) => {
                     columnLabel: withinLabel,
                     type: "metricValue",
                     metricId: metricGroup.metricId,
-                    valueFormatter: (val) =>
-                      squareMeterToKilometer(
-                        Number(val) *
-                          361.3920285064072573 *
-                          361.3920285064072573,
-                      ).toFixed(2),
+                    valueFormatter: (val) => validToKm2(Number(val)).toFixed(2),
                     valueLabel: unitsLabel,
                     chartOptions: {
                       showTitle: true,
@@ -142,11 +119,11 @@ export const DepthClassesCard: React.FunctionComponent<GeogProp> = (props) => {
               )}
 
               <Collapse title={t("Learn More")}>
-                <Trans i18nKey="DepthClassesCard - learn more">
+                <Trans i18nKey="depthCard - learn more">
                   <p>🗺️ Source Data: GEBCO 2024</p>
                   <p>
-                    📈 Report: Calculates the minimum, average, and maximum
-                    ocean depth within the selected MPA(s).
+                    📈 Report: Calculates the total area and percentage of each
+                    depth class within the selected MPA(s).
                   </p>
                 </Trans>
               </Collapse>
@@ -157,6 +134,12 @@ export const DepthClassesCard: React.FunctionComponent<GeogProp> = (props) => {
     </ResultsCard>
   );
 };
+
+function validToKm2(valid: number) {
+  return squareMeterToKilometer(
+    valid * 361.3920285064072573 * 361.3920285064072573,
+  );
+}
 
 const genSketchTable = (
   data: ReportResult,

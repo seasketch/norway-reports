@@ -4,8 +4,6 @@ import {
   Polygon,
   MultiPolygon,
   GeoprocessingHandler,
-  getFirstFromParam,
-  DefaultExtraParams,
   rasterMetrics,
   isRasterDatasource,
   loadCog,
@@ -17,53 +15,28 @@ import {
   rekeyMetrics,
   sortMetrics,
 } from "@seasketch/geoprocessing/client-core";
-import { clipToGeography } from "../util/clipToGeography.js";
 
 /**
- * depthClasses: A geoprocessing function that calculates overlap metrics for raster datasources
- * @param sketch - A sketch or collection of sketches
+ * Overlap with depthClasses classes
  */
 export async function depthClasses(
   sketch:
     | Sketch<Polygon | MultiPolygon>
     | SketchCollection<Polygon | MultiPolygon>,
 ): Promise<ReportResult> {
-  // Calculate overlap metrics for each class in metric group
   const metricGroup = project.getMetricGroup("depthClasses");
-  const metrics: Metric[] = (
-    await Promise.all(
-      metricGroup.classes.map(async (curClass) => {
-        const ds = project.getMetricGroupDatasource(metricGroup, {
-          classId: curClass.classId,
-        });
-        if (!isRasterDatasource(ds))
-          throw new Error(`Expected raster datasource for ${ds.datasourceId}`);
+  const ds = project.getMetricGroupDatasource(metricGroup);
+  if (!isRasterDatasource(ds))
+    throw new Error(`Expected raster datasource for ${ds.datasourceId}`);
+  const url = project.getDatasourceUrl(ds);
+  const raster = await loadCog(url);
 
-        const url = project.getDatasourceUrl(ds);
-
-        // Load raster metadata
-        const raster = await loadCog(url);
-
-        // Run raster analysis
-        const overlapResult = await rasterMetrics(raster, {
-          metricId: metricGroup.metricId,
-          feature: sketch,
-          ...(ds.measurementType === "quantitative" && { stats: ["valid"] }),
-          ...(ds.measurementType === "categorical" && {
-            categorical: true,
-            categoryMetricValues: [curClass.classId],
-          }),
-        });
-
-        return overlapResult.map(
-          (metrics): Metric => ({
-            ...metrics,
-            classId: curClass.classId,
-          }),
-        );
-      }),
-    )
-  ).flat();
+  const metrics: Metric[] = await rasterMetrics(raster, {
+    metricId: metricGroup.metricId,
+    feature: sketch,
+    categorical: true,
+    categoryMetricValues: metricGroup.classes.map((c) => c.classId),
+  });
 
   return {
     metrics: sortMetrics(rekeyMetrics(metrics)),

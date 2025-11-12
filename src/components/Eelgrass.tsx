@@ -148,11 +148,10 @@ export const Eelgrass: React.FunctionComponent<GeogProp> = (props) => {
               <Trans i18nKey="Eelgrass - learn more">
                 <p>🗺️ Source Data: Marine naturtyper ettter DN-håndbok 19</p>
                 <p>
-                  📈 Report: This report calculates the total value of each
-                  feature within the plan. This value is divided by the total
-                  value of each feature to obtain the % contained within the
-                  plan. If the plan includes multiple areas that overlap, the
-                  overlap is only counted once.
+                  📈 Report: This report calculates the total area of eelgrass
+                  within the selected MPA(s). This value is divided by the total
+                  area of eelgrass to obtain the % contained within the selected
+                  MPA(s).
                 </p>
               </Trans>
             </Collapse>

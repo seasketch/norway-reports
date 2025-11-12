@@ -79,12 +79,6 @@ export const Kelp: React.FunctionComponent<GeogProp> = (props) => {
 
         return (
           <ReportError>
-            <p>
-              <Trans i18nKey="Kelp 1">
-                This report summarizes the kelp forest extent within the plan.
-              </Trans>
-            </p>
-
             <ClassTable
               rows={metrics}
               metricGroup={metricGroup}
@@ -144,11 +138,10 @@ export const Kelp: React.FunctionComponent<GeogProp> = (props) => {
               <Trans i18nKey="Kelp - learn more">
                 <p>🗺️ Source Data: Marine naturtyper ettter DN-håndbok 19</p>
                 <p>
-                  📈 Report: This report calculates the total value of each
-                  feature within the plan. This value is divided by the total
-                  value of each feature to obtain the % contained within the
-                  plan. If the plan includes multiple areas that overlap, the
-                  overlap is only counted once.
+                  📈 Report: This report calculates the total area of kelp
+                  forest within the selected MPA(s). This value is divided by
+                  the total area of kelp forest to obtain the % contained within
+                  the selected MPA(s).
                 </p>
               </Trans>
             </Collapse>
