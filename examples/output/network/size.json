@@ -6,7 +6,7 @@
       "classId": "planningArea",
       "sketchId": "101895",
       "groupId": null,
-      "value": 108387611.0878,
+      "value": 110270873.56936714,
       "extra": {
         "sketchName": "test"
       }
@@ -17,7 +17,7 @@
       "classId": "planningArea",
       "sketchId": "102341",
       "groupId": null,
-      "value": 9951031.262031,
+      "value": 9951161.636427978,
       "extra": {
         "sketchName": "corner"
       }
@@ -28,7 +28,7 @@
       "classId": "planningArea",
       "sketchId": "102342",
       "groupId": null,
-      "value": 118334346.231994,
+      "value": 120217790.94743821,
       "extra": {
         "sketchName": "network",
         "isCollection": true
