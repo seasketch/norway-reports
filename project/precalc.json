@@ -66,6 +66,46 @@
   {
     "geographyId": "planningArea",
     "metricId": "area",
+    "classId": "landscapeType-KF",
+    "sketchId": null,
+    "groupId": null,
+    "value": 0
+  },
+  {
+    "geographyId": "planningArea",
+    "metricId": "area",
+    "classId": "landscapeType-KS",
+    "sketchId": null,
+    "groupId": null,
+    "value": 181475656.1567127
+  },
+  {
+    "geographyId": "planningArea",
+    "metricId": "area",
+    "classId": "landscapeType-MA",
+    "sketchId": null,
+    "groupId": null,
+    "value": 133221724.93091138
+  },
+  {
+    "geographyId": "planningArea",
+    "metricId": "area",
+    "classId": "landscapeType-MS",
+    "sketchId": null,
+    "groupId": null,
+    "value": 328760014.2707797
+  },
+  {
+    "geographyId": "planningArea",
+    "metricId": "area",
+    "classId": "landscapeType-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 643457395.3584039
+  },
+  {
+    "geographyId": "planningArea",
+    "metricId": "area",
     "classId": "makrellterne-total",
     "sketchId": null,
     "groupId": null,
@@ -214,6 +254,46 @@
     "sketchId": null,
     "groupId": null,
     "value": 203
+  },
+  {
+    "geographyId": "planningArea",
+    "metricId": "count",
+    "classId": "landscapeType-KF",
+    "sketchId": null,
+    "groupId": null,
+    "value": 0
+  },
+  {
+    "geographyId": "planningArea",
+    "metricId": "count",
+    "classId": "landscapeType-KS",
+    "sketchId": null,
+    "groupId": null,
+    "value": 53
+  },
+  {
+    "geographyId": "planningArea",
+    "metricId": "count",
+    "classId": "landscapeType-MA",
+    "sketchId": null,
+    "groupId": null,
+    "value": 3
+  },
+  {
+    "geographyId": "planningArea",
+    "metricId": "count",
+    "classId": "landscapeType-MS",
+    "sketchId": null,
+    "groupId": null,
+    "value": 6
+  },
+  {
+    "geographyId": "planningArea",
+    "metricId": "count",
+    "classId": "landscapeType-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 62
   },
   {
     "geographyId": "planningArea",

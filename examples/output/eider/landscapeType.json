@@ -1,0 +1,37 @@
+{
+  "metrics": [
+    {
+      "geographyId": null,
+      "metricId": "landscapeType",
+      "classId": "KS",
+      "sketchId": "111624",
+      "groupId": null,
+      "value": 650774.439779,
+      "extra": {
+        "sketchName": "eider"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "landscapeType",
+      "classId": "MA",
+      "sketchId": "111624",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "eider"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "landscapeType",
+      "classId": "MS",
+      "sketchId": "111624",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "eider"
+      }
+    }
+  ]
+}

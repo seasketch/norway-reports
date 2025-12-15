@@ -101,6 +101,8 @@ export const Size: React.FunctionComponent<GeogProp> = (props) => {
           areaMetric.value / totalAreaMetric.value,
         );
 
+        const meetsObjective = squareMeterToKilometer(areaMetric.value) > 12;
+
         return (
           <ReportError>
             <KeySection>
@@ -114,17 +116,21 @@ export const Size: React.FunctionComponent<GeogProp> = (props) => {
 
             {!isCollection && (
               <ObjectiveStatus
-                status={
-                  squareMeterToKilometer(areaMetric.value) > 12 ? "yes" : "no"
-                }
+                status={meetsObjective ? "yes" : "no"}
                 msg={
-                  <>
-                    This MPA{" "}
-                    {squareMeterToKilometer(areaMetric.value) > 12
-                      ? "meets "
-                      : "does not meet "}
-                    the 12 sq. km. minimum size objective.
-                  </>
+                  meetsObjective ? (
+                    <>
+                      {t(
+                        "This MPA meets the 12 sq. km. minimum size objective.",
+                      )}
+                    </>
+                  ) : (
+                    <>
+                      {t(
+                        "This MPA does not meet the 12 sq. km. minimum size objective.",
+                      )}
+                    </>
+                  )
                 }
               />
             )}

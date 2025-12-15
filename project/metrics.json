@@ -173,5 +173,26 @@
         "layerId": "zxdvcGS0q"
       }
     ]
+  },
+  {
+    "metricId": "landscapeType",
+    "type": "areaOverlap",
+    "datasourceId": "landscapeType",
+    "classKey": "hovedtype_med_kode",
+    "layerId": "EdgNNmY9B",
+    "classes": [
+      {
+        "classId": "KS",
+        "display": "Coastal Plain"
+      },
+      {
+        "classId": "MA",
+        "display": "Marine Hill & Mountain"
+      },
+      {
+        "classId": "MS",
+        "display": "Marine Plain"
+      }
+    ]
   }
 ]

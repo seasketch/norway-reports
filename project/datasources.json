@@ -252,15 +252,28 @@
     "explodeMulti": true
   },
   {
-    "src": "data/src/Reports/SeabirdNestingAreas/art_tjeld.shp",
-    "layerName": "art_tjeld",
-    "geo_type": "vector",
     "datasourceId": "tjeld",
+    "geo_type": "vector",
     "formats": ["fgb"],
+    "precalc": true,
+    "layerName": "art_tjeld",
     "classKeys": [],
     "created": "2025-11-12T20:07:45.743Z",
     "lastUpdated": "2025-11-12T20:07:45.743Z",
+    "src": "data/src/Reports/SeabirdNestingAreas/art_tjeld.shp",
     "propertiesToKeep": [],
+    "explodeMulti": true
+  },
+  {
+    "src": "data/src/Reports/landscapeType/landskapstyper_clipped.fgb",
+    "layerName": "landskapstyper_clipped",
+    "geo_type": "vector",
+    "datasourceId": "landscapeType",
+    "formats": ["fgb"],
+    "classKeys": ["hovedtype_med_kode"],
+    "created": "2025-12-15T18:59:48.478Z",
+    "lastUpdated": "2025-12-15T18:59:48.478Z",
+    "propertiesToKeep": ["hovedtype_med_kode"],
     "explodeMulti": true,
     "precalc": true
   }

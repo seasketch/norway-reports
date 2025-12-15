@@ -1,0 +1,106 @@
+{
+  "metrics": [
+    {
+      "geographyId": null,
+      "metricId": "landscapeType",
+      "classId": "KS",
+      "sketchId": "101895",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "test"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "landscapeType",
+      "classId": "KS",
+      "sketchId": "102341",
+      "groupId": null,
+      "value": 4180226.632567,
+      "extra": {
+        "sketchName": "corner"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "landscapeType",
+      "classId": "KS",
+      "sketchId": "102342",
+      "groupId": null,
+      "value": 4180226.632567,
+      "extra": {
+        "sketchName": "network",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "landscapeType",
+      "classId": "MA",
+      "sketchId": "101895",
+      "groupId": null,
+      "value": 44870686.761422,
+      "extra": {
+        "sketchName": "test"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "landscapeType",
+      "classId": "MA",
+      "sketchId": "102341",
+      "groupId": null,
+      "value": 4737.722008,
+      "extra": {
+        "sketchName": "corner"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "landscapeType",
+      "classId": "MA",
+      "sketchId": "102342",
+      "groupId": null,
+      "value": 44875424.48343,
+      "extra": {
+        "sketchName": "network",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "landscapeType",
+      "classId": "MS",
+      "sketchId": "101895",
+      "groupId": null,
+      "value": 65413432.460487,
+      "extra": {
+        "sketchName": "test"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "landscapeType",
+      "classId": "MS",
+      "sketchId": "102341",
+      "groupId": null,
+      "value": 5766097.934851,
+      "extra": {
+        "sketchName": "corner"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "landscapeType",
+      "classId": "MS",
+      "sketchId": "102342",
+      "groupId": null,
+      "value": 71175071.893723,
+      "extra": {
+        "sketchName": "network",
+        "isCollection": true
+      }
+    }
+  ]
+}
