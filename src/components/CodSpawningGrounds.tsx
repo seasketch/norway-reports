@@ -3,9 +3,11 @@ import { Trans, useTranslation } from "react-i18next";
 import {
   ClassTable,
   Collapse,
+  DataDownload,
   ReportError,
   ResultsCard,
   SketchClassTable,
+  ToolbarCard,
   useSketchProperties,
 } from "@seasketch/geoprocessing/client-ui";
 import {
@@ -21,6 +23,7 @@ import {
   toPercentMetric,
 } from "@seasketch/geoprocessing/client-core";
 import project from "../../project/projectClient.js";
+import { Download } from "@styled-icons/bootstrap/Download";
 
 /**
  * CodSpawningGrounds component
@@ -53,7 +56,7 @@ export const CodSpawningGrounds: React.FunctionComponent<GeogProp> = (
     <ResultsCard
       title={titleLabel}
       functionName="codSpawningGrounds"
-      extraParams={{ geographyIds: [curGeography.geographyId] }}
+      useChildCard
     >
       {(data: ReportResult) => {
         const percMetricIdName = `${metricGroup.metricId}Perc`;
@@ -69,90 +72,112 @@ export const CodSpawningGrounds: React.FunctionComponent<GeogProp> = (
 
         return (
           <ReportError>
-            <ClassTable
-              rows={metrics}
-              metricGroup={metricGroup}
-              columnConfig={[
-                {
-                  columnLabel: " ",
-                  type: "class",
-                  width: 30,
-                },
-                {
-                  columnLabel: withinLabel,
-                  type: "metricValue",
-                  metricId: metricGroup.metricId,
-                  valueFormatter: (val) =>
-                    !Number(val)
-                      ? "0"
-                      : roundLower(squareMeterToKilometer(Number(val)), {
-                          lower: 0.1,
-                        }),
-                  valueLabel: unitsLabel,
-                  chartOptions: {
-                    showTitle: true,
-                  },
-                  width: 20,
-                },
-                {
-                  columnLabel: percWithinLabel,
-                  type: "metricChart",
-                  metricId: percMetricIdName,
-                  valueFormatter: "percent",
-                  chartOptions: {
-                    showTitle: true,
-                  },
-                  width: 40,
-                },
-                {
-                  columnLabel: mapLabel,
-                  type: "layerToggle",
-                  width: 10,
-                },
+            <ToolbarCard
+              title={titleLabel}
+              items={[
+                <DataDownload
+                  filename={titleLabel}
+                  data={metrics.map((m) => ({
+                    metricId: m.metricId,
+                    classId: m.classId,
+                    value: m.value,
+                    extra: m.extra,
+                  }))}
+                  titleElement={
+                    <Download
+                      size={18}
+                      color="#999"
+                      style={{ cursor: "pointer" }}
+                    />
+                  }
+                />,
               ]}
-            />
+            >
+              <ClassTable
+                rows={metrics}
+                metricGroup={metricGroup}
+                columnConfig={[
+                  {
+                    columnLabel: " ",
+                    type: "class",
+                    width: 30,
+                  },
+                  {
+                    columnLabel: withinLabel,
+                    type: "metricValue",
+                    metricId: metricGroup.metricId,
+                    valueFormatter: (val) =>
+                      !Number(val)
+                        ? "0"
+                        : roundLower(squareMeterToKilometer(Number(val)), {
+                            lower: 0.1,
+                          }),
+                    valueLabel: unitsLabel,
+                    chartOptions: {
+                      showTitle: true,
+                    },
+                    width: 20,
+                  },
+                  {
+                    columnLabel: percWithinLabel,
+                    type: "metricChart",
+                    metricId: percMetricIdName,
+                    valueFormatter: "percent",
+                    chartOptions: {
+                      showTitle: true,
+                    },
+                    width: 40,
+                  },
+                  {
+                    columnLabel: mapLabel,
+                    type: "layerToggle",
+                    width: 10,
+                  },
+                ]}
+              />
 
-            {isCollection && childProperties && (
-              <Collapse title={t("Show by Sketch")}>
-                {genSketchTable(
-                  data,
-                  metricGroup,
-                  precalcMetrics,
-                  childProperties,
-                )}
+              {isCollection && childProperties && (
+                <Collapse title={t("Show by Sketch")}>
+                  {genSketchTable(
+                    data,
+                    metricGroup,
+                    precalcMetrics,
+                    childProperties,
+                  )}
+                </Collapse>
+              )}
+
+              <Collapse title={t("Learn More")}>
+                <Trans i18nKey="CodSpawningGrounds - learn more">
+                  <p>
+                    ℹ️ Overview: Marint biologisk mangfold - Gytefelt for torsk.
+                    mapDigital Kartlegging av gyteområder skjer gjennom en
+                    kombinasjon av intervjuundersøkelser og verifisering i felt
+                    gjennom blant annet eggtellinger og undersøkelser av
+                    havstrømmer og oseanografi. I hovedsak er det
+                    Fiskeridirektoratet som har gjennomført
+                    intervjuundersøkelser med fiskere og
+                    Havforskningsinstituttet som har foretatt verifisering.
+                  </p>
+                  <p>
+                    Mapping of spawning areas is carried out through a
+                    combination of interview surveys and verification in the
+                    field through, among other things, egg counts and surveys of
+                    ocean currents and oceanography. In the main, it is the
+                    Directorate of Fisheries that has conducted interview
+                    surveys with fishermen and the Institute of Marine Research
+                    that has carried out verification.
+                  </p>
+                  <p>
+                    📈 Report: This report calculates the total area of cod
+                    spawning grounds within the selected MPA(s). This area is
+                    divided by the total area cod spawning grounds within the
+                    planning area to obtain the % contained within the selected
+                    MPA(s).
+                  </p>
+                </Trans>
               </Collapse>
-            )}
-
-            <Collapse title={t("Learn More")}>
-              <Trans i18nKey="CodSpawningGrounds - learn more">
-                <p>
-                  ℹ️ Overview: Marint biologisk mangfold - Gytefelt for torsk.
-                  mapDigital Kartlegging av gyteområder skjer gjennom en
-                  kombinasjon av intervjuundersøkelser og verifisering i felt
-                  gjennom blant annet eggtellinger og undersøkelser av
-                  havstrømmer og oseanografi. I hovedsak er det
-                  Fiskeridirektoratet som har gjennomført intervjuundersøkelser
-                  med fiskere og Havforskningsinstituttet som har foretatt
-                  verifisering.
-                </p>
-                <p>
-                  Mapping of spawning areas is carried out through a combination
-                  of interview surveys and verification in the field through,
-                  among other things, egg counts and surveys of ocean currents
-                  and oceanography. In the main, it is the Directorate of
-                  Fisheries that has conducted interview surveys with fishermen
-                  and the Institute of Marine Research that has carried out
-                  verification.
-                </p>
-                <p>
-                  📈 Report: This report calculates the total area of cod
-                  spawning grounds within the selected MPA(s). This area is
-                  divided by the total area cod spawning grounds within the
-                  planning area to obtain the % contained within the selected
-                  MPA(s).
-                </p>
-              </Trans>
-            </Collapse>
+            </ToolbarCard>
           </ReportError>
         );
       }}

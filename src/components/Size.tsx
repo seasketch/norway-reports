@@ -4,12 +4,14 @@ import {
   ClassTable,
   Collapse,
   Column,
+  DataDownload,
   KeySection,
   ObjectiveStatus,
   ReportError,
   ReportTableStyled,
   ResultsCard,
   Table,
+  ToolbarCard,
   useSketchProperties,
 } from "@seasketch/geoprocessing/client-ui";
 import {
@@ -28,14 +30,12 @@ import {
   toPercentMetric,
 } from "@seasketch/geoprocessing/client-core";
 import project from "../../project/projectClient.js";
-import { CheckCircleFill, XCircleFill } from "@styled-icons/bootstrap";
+import { CheckCircleFill, Download } from "@styled-icons/bootstrap";
+import { XCircleFill } from "@styled-icons/bootstrap/XCircleFill";
 import { styled } from "styled-components";
 
 /**
  * Size component
- *
- * @param props - geographyId
- * @returns A react component which displays an overlap report
  */
 export const Size: React.FunctionComponent<GeogProp> = (props) => {
   const { t } = useTranslation();
@@ -60,11 +60,7 @@ export const Size: React.FunctionComponent<GeogProp> = (props) => {
   const unitsLabel = t("km²");
 
   return (
-    <ResultsCard
-      title={titleLabel}
-      functionName="size"
-      extraParams={{ geographyIds: [curGeography.geographyId] }}
-    >
+    <ResultsCard title={titleLabel} functionName="size" useChildCard>
       {(data: ReportResult) => {
         const percMetricIdName = `${metricGroup.metricId}Perc`;
 
@@ -105,102 +101,124 @@ export const Size: React.FunctionComponent<GeogProp> = (props) => {
 
         return (
           <ReportError>
-            <KeySection>
-              {t("This plan is")}{" "}
-              <b>
-                {areaDisplay} {unitsLabel}
-              </b>
-              {", "}
-              {t("which is")} <b>{percDisplay}</b> {t("of Raet NP.")}
-            </KeySection>
-
-            {!isCollection && (
-              <ObjectiveStatus
-                status={meetsObjective ? "yes" : "no"}
-                msg={
-                  meetsObjective ? (
-                    <>
-                      {t(
-                        "This MPA meets the 12 sq. km. minimum size objective.",
-                      )}
-                    </>
-                  ) : (
-                    <>
-                      {t(
-                        "This MPA does not meet the 12 sq. km. minimum size objective.",
-                      )}
-                    </>
-                  )
-                }
-              />
-            )}
-
-            <ClassTable
-              rows={metrics}
-              metricGroup={metricGroup}
-              objective={objectives}
-              columnConfig={[
-                {
-                  columnLabel: " ",
-                  type: "class",
-                  width: 20,
-                },
-                {
-                  columnLabel: withinLabel,
-                  type: "metricValue",
-                  metricId: metricGroup.metricId,
-                  valueFormatter: (v) =>
-                    roundLower(squareMeterToKilometer(Number(v))),
-                  valueLabel: unitsLabel,
-                  chartOptions: {
-                    showTitle: true,
-                  },
-                  width: 20,
-                },
-                {
-                  columnLabel: percWithinLabel,
-                  type: "metricChart",
-                  metricId: percMetricIdName,
-                  valueFormatter: "percent",
-                  chartOptions: {
-                    showTitle: true,
-                  },
-                  width: 40,
-                },
-                {
-                  columnLabel: mapLabel,
-                  type: "layerToggle",
-                  width: 10,
-                },
+            <ToolbarCard
+              title={titleLabel}
+              items={[
+                <DataDownload
+                  filename={titleLabel}
+                  data={metrics.map((m) => ({
+                    metricId: m.metricId,
+                    classId: m.classId,
+                    value: m.value,
+                    extra: m.extra,
+                  }))}
+                  titleElement={
+                    <Download
+                      size={18}
+                      color="#999"
+                      style={{ cursor: "pointer" }}
+                    />
+                  }
+                />,
               ]}
-            />
+            >
+              <KeySection>
+                {t("This plan is")}{" "}
+                <b>
+                  {areaDisplay} {unitsLabel}
+                </b>
+                {", "}
+                {t("which is")} <b>{percDisplay}</b> {t("of Raet NP.")}
+              </KeySection>
 
-            {isCollection && childProperties && (
-              <Collapse title={t("Show by Sketch")}>
-                {genSketchTable(
-                  data,
-                  metricGroup,
-                  precalcMetrics,
-                  childProperties,
-                  t,
-                )}
+              {!isCollection && (
+                <ObjectiveStatus
+                  status={meetsObjective ? "yes" : "no"}
+                  msg={
+                    meetsObjective ? (
+                      <>
+                        {t(
+                          "This MPA meets the 12 sq. km. minimum size objective.",
+                        )}
+                      </>
+                    ) : (
+                      <>
+                        {t(
+                          "This MPA does not meet the 12 sq. km. minimum size objective.",
+                        )}
+                      </>
+                    )
+                  }
+                />
+              )}
+
+              <ClassTable
+                rows={metrics}
+                metricGroup={metricGroup}
+                objective={objectives}
+                columnConfig={[
+                  {
+                    columnLabel: " ",
+                    type: "class",
+                    width: 20,
+                  },
+                  {
+                    columnLabel: withinLabel,
+                    type: "metricValue",
+                    metricId: metricGroup.metricId,
+                    valueFormatter: (v) =>
+                      roundLower(squareMeterToKilometer(Number(v))),
+                    valueLabel: unitsLabel,
+                    chartOptions: {
+                      showTitle: true,
+                    },
+                    width: 20,
+                  },
+                  {
+                    columnLabel: percWithinLabel,
+                    type: "metricChart",
+                    metricId: percMetricIdName,
+                    valueFormatter: "percent",
+                    chartOptions: {
+                      showTitle: true,
+                    },
+                    width: 40,
+                  },
+                  {
+                    columnLabel: mapLabel,
+                    type: "layerToggle",
+                    width: 10,
+                  },
+                ]}
+              />
+
+              {isCollection && childProperties && (
+                <Collapse title={t("Show by Sketch")}>
+                  {genSketchTable(
+                    data,
+                    metricGroup,
+                    precalcMetrics,
+                    childProperties,
+                    t,
+                  )}
+                </Collapse>
+              )}
+
+              <Collapse title={t("Learn More")}>
+                <Trans i18nKey="Size - learn more">
+                  <p>
+                    🎯 Planning Objective: 30% of Raet National Park in No-Take
+                    MPAs.
+                  </p>
+                  <p>
+                    📈 Report: This report calculates the total area within the
+                    selected MPA(s). This value is divided by the total area of
+                    the planning area to obtain the % contained within the
+                    selected MPA(s).
+                  </p>
+                </Trans>
               </Collapse>
-            )}
-
-            <Collapse title={t("Learn More")}>
-              <Trans i18nKey="Size - learn more">
-                <p>
-                  🎯 Planning Objective: 30% of Raet National Park in No-Take
-                  MPAs.
-                </p>
-                <p>
-                  📈 Report: This report calculates the total area within the
-                  selected MPA(s). This value is divided by the total area of
-                  the planning area to obtain the % contained within the
-                  selected MPA(s).
-                </p>
-              </Trans>
-            </Collapse>
+            </ToolbarCard>
           </ReportError>
         );
       }}

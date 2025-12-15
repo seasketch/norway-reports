@@ -3,9 +3,11 @@ import { Trans, useTranslation } from "react-i18next";
 import {
   ClassTable,
   Collapse,
+  DataDownload,
   ReportError,
   ResultsCard,
   SketchClassTable,
+  ToolbarCard,
   useSketchProperties,
 } from "@seasketch/geoprocessing/client-ui";
 import {
@@ -21,6 +23,7 @@ import {
   toPercentMetric,
 } from "@seasketch/geoprocessing/client-core";
 import project from "../../project/projectClient.js";
+import { Download } from "@styled-icons/bootstrap/Download";
 
 /**
  * Bioclastic Sand component
@@ -48,7 +51,7 @@ export const BioclasticSand: React.FunctionComponent<GeogProp> = (props) => {
   const unitsLabel = t("km²");
 
   return (
-    <ResultsCard title={titleLabel} functionName="bioclasticSand">
+    <ResultsCard title={titleLabel} functionName="bioclasticSand" useChildCard>
       {(data: ReportResult) => {
         const percMetricIdName = `${metricGroup.metricId}Perc`;
 
@@ -63,71 +66,93 @@ export const BioclasticSand: React.FunctionComponent<GeogProp> = (props) => {
 
         return (
           <ReportError>
-            <ClassTable
-              rows={metrics}
-              metricGroup={metricGroup}
-              columnConfig={[
-                {
-                  columnLabel: " ",
-                  type: "class",
-                  width: 30,
-                },
-                {
-                  columnLabel: withinLabel,
-                  type: "metricValue",
-                  metricId: metricGroup.metricId,
-                  valueFormatter: (val) =>
-                    !Number(val)
-                      ? "0"
-                      : roundLower(squareMeterToKilometer(Number(val)), {
-                          lower: 0.1,
-                        }),
-                  valueLabel: unitsLabel,
-                  chartOptions: {
-                    showTitle: true,
-                  },
-                  width: 20,
-                },
-                {
-                  columnLabel: percWithinLabel,
-                  type: "metricChart",
-                  metricId: percMetricIdName,
-                  valueFormatter: "percent",
-                  chartOptions: {
-                    showTitle: true,
-                  },
-                  width: 40,
-                },
-                {
-                  columnLabel: mapLabel,
-                  type: "layerToggle",
-                  width: 10,
-                },
+            <ToolbarCard
+              title={titleLabel}
+              items={[
+                <DataDownload
+                  filename={titleLabel}
+                  data={metrics.map((m) => ({
+                    metricId: m.metricId,
+                    classId: m.classId,
+                    value: m.value,
+                    extra: m.extra,
+                  }))}
+                  titleElement={
+                    <Download
+                      size={18}
+                      color="#999"
+                      style={{ cursor: "pointer" }}
+                    />
+                  }
+                />,
               ]}
-            />
+            >
+              <ClassTable
+                rows={metrics}
+                metricGroup={metricGroup}
+                columnConfig={[
+                  {
+                    columnLabel: " ",
+                    type: "class",
+                    width: 30,
+                  },
+                  {
+                    columnLabel: withinLabel,
+                    type: "metricValue",
+                    metricId: metricGroup.metricId,
+                    valueFormatter: (val) =>
+                      !Number(val)
+                        ? "0"
+                        : roundLower(squareMeterToKilometer(Number(val)), {
+                            lower: 0.1,
+                          }),
+                    valueLabel: unitsLabel,
+                    chartOptions: {
+                      showTitle: true,
+                    },
+                    width: 20,
+                  },
+                  {
+                    columnLabel: percWithinLabel,
+                    type: "metricChart",
+                    metricId: percMetricIdName,
+                    valueFormatter: "percent",
+                    chartOptions: {
+                      showTitle: true,
+                    },
+                    width: 40,
+                  },
+                  {
+                    columnLabel: mapLabel,
+                    type: "layerToggle",
+                    width: 10,
+                  },
+                ]}
+              />
 
-            {isCollection && childProperties && (
-              <Collapse title={t("Show by Sketch")}>
-                {genSketchTable(
-                  data,
-                  metricGroup,
-                  precalcMetrics,
-                  childProperties,
-                )}
+              {isCollection && childProperties && (
+                <Collapse title={t("Show by Sketch")}>
+                  {genSketchTable(
+                    data,
+                    metricGroup,
+                    precalcMetrics,
+                    childProperties,
+                  )}
+                </Collapse>
+              )}
+
+              <Collapse title={t("Learn More")}>
+                <Trans i18nKey="BioclasticSand - learn more">
+                  <p>🗺️ Source Data: Marine naturtyper ettter DN-håndbok 19</p>
+                  <p>
+                    📈 Report: This report calculates the total area of
+                    bioclastic sand within the selected MPA(s). This value is
+                    divided by the total area of bioclastic sand to obtain the %
+                    contained within the selected MPA(s).
+                  </p>
+                </Trans>
               </Collapse>
-            )}
-
-            <Collapse title={t("Learn More")}>
-              <Trans i18nKey="BioclasticSand - learn more">
-                <p>🗺️ Source Data: Marine naturtyper ettter DN-håndbok 19</p>
-                <p>
-                  📈 Report: This report calculates the total area of bioclastic
-                  sand within the selected MPA(s). This value is divided by the
-                  total area of bioclastic sand to obtain the % contained within
-                  the selected MPA(s).
-                </p>
-              </Trans>
-            </Collapse>
+            </ToolbarCard>
           </ReportError>
         );
       }}

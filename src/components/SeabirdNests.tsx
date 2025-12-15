@@ -3,12 +3,14 @@ import { Trans, useTranslation } from "react-i18next";
 import {
   Collapse,
   Column,
+  DataDownload,
   LayerToggle,
   ReportError,
   ReportTableStyled,
   ResultsCard,
   SketchClassTable,
   Table,
+  ToolbarCard,
   useSketchProperties,
 } from "@seasketch/geoprocessing/client-ui";
 import {
@@ -23,6 +25,7 @@ import {
 } from "@seasketch/geoprocessing/client-core";
 import project from "../../project/projectClient.js";
 import { styled } from "styled-components";
+import { Download } from "@styled-icons/bootstrap/Download";
 
 // ClassId -> scientific name
 const scientificNames: Record<string, string> = {
@@ -92,7 +95,7 @@ export const SeabirdNests: React.FunctionComponent<GeogProp> = (props) => {
   const percWithinLabel = t("% of Total Nests");
 
   return (
-    <ResultsCard title={titleLabel} functionName="seabirdNests">
+    <ResultsCard title={titleLabel} functionName="seabirdNests" useChildCard>
       {(data: ReportResult) => {
         const percMetricIdName = `${metricGroup.metricId}Perc`;
 
@@ -108,40 +111,62 @@ export const SeabirdNests: React.FunctionComponent<GeogProp> = (props) => {
 
         return (
           <ReportError>
-            <SeabirdTableStyled>
-              <Table
-                columns={getSeabirdColumns(
-                  t,
-                  seabirdLabel,
-                  withinLabel,
-                  percWithinLabel,
-                  mapLabel,
-                )}
-                data={getSeabirdData(metrics, metricGroup, percMetricIdName)}
-              />
-            </SeabirdTableStyled>
+            <ToolbarCard
+              title={titleLabel}
+              items={[
+                <DataDownload
+                  filename={titleLabel}
+                  data={metrics.map((m) => ({
+                    metricId: m.metricId,
+                    classId: m.classId,
+                    value: m.value,
+                    extra: m.extra,
+                  }))}
+                  titleElement={
+                    <Download
+                      size={18}
+                      color="#999"
+                      style={{ cursor: "pointer" }}
+                    />
+                  }
+                />,
+              ]}
+            >
+              <SeabirdTableStyled>
+                <Table
+                  columns={getSeabirdColumns(
+                    t,
+                    seabirdLabel,
+                    withinLabel,
+                    percWithinLabel,
+                    mapLabel,
+                  )}
+                  data={getSeabirdData(metrics, metricGroup, percMetricIdName)}
+                />
+              </SeabirdTableStyled>
 
-            {isCollection && childProperties && (
-              <Collapse title={t("Show by Sketch")}>
-                {genSketchTable(
-                  data,
-                  metricGroup,
-                  precalcMetrics,
-                  childProperties,
-                )}
+              {isCollection && childProperties && (
+                <Collapse title={t("Show by Sketch")}>
+                  {genSketchTable(
+                    data,
+                    metricGroup,
+                    precalcMetrics,
+                    childProperties,
+                  )}
+                </Collapse>
+              )}
+
+              <Collapse title={t("Learn More")}>
+                <Trans i18nKey="SeabirdNests - learn more">
+                  <p>
+                    📈 Report: This report calculates the total number of nests
+                    adjacent to the selected MPA(s) (within 200m). This value is
+                    divided by the total number of nests to obtain the %
+                    adjacent to the selected MPA(s).
+                  </p>
+                </Trans>
               </Collapse>
-            )}
-
-            <Collapse title={t("Learn More")}>
-              <Trans i18nKey="SeabirdNests - learn more">
-                <p>
-                  📈 Report: This report calculates the total number of nests
-                  adjacent to the selected MPA(s) (within 200m). This value is
-                  divided by the total number of nests to obtain the % adjacent
-                  to the selected MPA(s).
-                </p>
-              </Trans>
-            </Collapse>
+            </ToolbarCard>
           </ReportError>
         );
       }}

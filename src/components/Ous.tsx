@@ -3,9 +3,11 @@ import { Trans, useTranslation } from "react-i18next";
 import {
   ClassTable,
   Collapse,
+  DataDownload,
   ReportError,
   ResultsCard,
   SketchClassTable,
+  ToolbarCard,
   useSketchProperties,
 } from "@seasketch/geoprocessing/client-ui";
 import {
@@ -19,6 +21,7 @@ import {
   toPercentMetric,
 } from "@seasketch/geoprocessing/client-core";
 import project from "../../project/projectClient.js";
+import { Download } from "@styled-icons/bootstrap/Download";
 
 /**
  * Ous component
@@ -44,7 +47,7 @@ export const Ous: React.FunctionComponent<GeogProp> = (props) => {
   const percWithinLabel = t("% Within Plan");
 
   return (
-    <ResultsCard title={titleLabel} functionName="ous">
+    <ResultsCard title={titleLabel} functionName="ous" useChildCard>
       {(data: ReportResult) => {
         const percMetricIdName = `${metricGroup.metricId}Perc`;
 
@@ -55,66 +58,87 @@ export const Ous: React.FunctionComponent<GeogProp> = (props) => {
         const percentMetrics = toPercentMetric(valueMetrics, precalcMetrics, {
           metricIdOverride: percMetricIdName,
         });
-        const metrics = [...valueMetrics, ...percentMetrics];
 
         return (
           <ReportError>
-            <p>
-              <Trans i18nKey="Ous 1">
-                This report summarizes overlap with ocean use value, based on
-                results from the Raet National Park Ocean Use Survey.
-              </Trans>
-            </p>
-
-            <ClassTable
-              rows={metrics}
-              metricGroup={metricGroup}
-              columnConfig={[
-                {
-                  columnLabel: " ",
-                  type: "class",
-                  width: 55,
-                },
-                {
-                  columnLabel: percWithinLabel,
-                  type: "metricChart",
-                  metricId: percMetricIdName,
-                  valueFormatter: "percent",
-                  chartOptions: {
-                    showTitle: true,
-                  },
-                  width: 35,
-                },
-                {
-                  columnLabel: mapLabel,
-                  type: "layerToggle",
-                  width: 10,
-                },
+            <ToolbarCard
+              title={titleLabel}
+              items={[
+                <DataDownload
+                  filename={titleLabel}
+                  data={percentMetrics.map((m) => ({
+                    metricId: m.metricId,
+                    classId: m.classId,
+                    value: m.value,
+                    extra: m.extra,
+                  }))}
+                  titleElement={
+                    <Download
+                      size={18}
+                      color="#999"
+                      style={{ cursor: "pointer" }}
+                    />
+                  }
+                />,
               ]}
-            />
+            >
+              <p>
+                <Trans i18nKey="Ous 1">
+                  This report summarizes overlap with ocean use value, based on
+                  results from the Raet National Park Ocean Use Survey.
+                </Trans>
+              </p>
 
-            {isCollection && childProperties && (
-              <Collapse title={t("Show by Sketch")}>
-                {genSketchTable(
-                  data,
-                  metricGroup,
-                  precalcMetrics,
-                  childProperties,
-                )}
+              <ClassTable
+                rows={percentMetrics}
+                metricGroup={metricGroup}
+                columnConfig={[
+                  {
+                    columnLabel: titleLabel,
+                    type: "class",
+                    width: 55,
+                  },
+                  {
+                    columnLabel: percWithinLabel,
+                    type: "metricChart",
+                    metricId: percMetricIdName,
+                    valueFormatter: "percent",
+                    chartOptions: {
+                      showTitle: true,
+                    },
+                    width: 35,
+                  },
+                  {
+                    columnLabel: mapLabel,
+                    type: "layerToggle",
+                    width: 10,
+                  },
+                ]}
+              />
+
+              {isCollection && childProperties && (
+                <Collapse title={t("Show by Sketch")}>
+                  {genSketchTable(
+                    data,
+                    metricGroup,
+                    precalcMetrics,
+                    childProperties,
+                  )}
+                </Collapse>
+              )}
+
+              <Collapse title={t("Learn More")}>
+                <Trans i18nKey="Ous - learn more">
+                  <p>🗺️ Source Data: Ocean Use Survey</p>
+                  <p>
+                    📈 Report: This report calculates the total ocean use value
+                    of each sector within the selected MPA(s). This value is
+                    divided by the total value of each ocean use sector to
+                    obtain the % contained within the selected MPA(s).
+                  </p>
+                </Trans>
               </Collapse>
-            )}
-
-            <Collapse title={t("Learn More")}>
-              <Trans i18nKey="Ous - learn more">
-                <p>🗺️ Source Data: Ocean Use Survey</p>
-                <p>
-                  📈 Report: This report calculates the total ocean use value of
-                  each sector within the selected MPA(s). This value is divided
-                  by the total value of each ocean use sector to obtain the %
-                  contained within the selected MPA(s).
-                </p>
-              </Trans>
-            </Collapse>
+            </ToolbarCard>
           </ReportError>
         );
       }}

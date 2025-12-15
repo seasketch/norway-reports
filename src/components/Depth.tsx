@@ -3,6 +3,7 @@ import { Trans, useTranslation } from "react-i18next";
 import {
   ClassTable,
   Collapse,
+  DataDownload,
   LayerToggle,
   ReportError,
   ResultsCard,
@@ -22,6 +23,7 @@ import {
   toPercentMetric,
 } from "@seasketch/geoprocessing/client-core";
 import project from "../../project/projectClient.js";
+import { Download } from "@styled-icons/bootstrap/Download";
 
 /**
  * Depth component
@@ -71,6 +73,24 @@ export const Depth: React.FunctionComponent<GeogProp> = (props) => {
                   layerId={metricGroup.layerId}
                   label={mapLabel}
                   simple
+                />,
+                <DataDownload
+                  filename={titleLabel}
+                  data={metrics.map((m) => ({
+                    metricId: m.metricId,
+                    classId: metricGroup.classes.find(
+                      (c) => c.classId === m.classId,
+                    )?.display,
+                    value: validToKm2(Number(m.value)),
+                    extra: m.extra,
+                  }))}
+                  titleElement={
+                    <Download
+                      size={18}
+                      color="#999"
+                      style={{ cursor: "pointer" }}
+                    />
+                  }
                 />,
               ]}
             >
